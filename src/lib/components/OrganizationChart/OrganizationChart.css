@@ -1,0 +1,95 @@
+.p-organizationchart .p-organizationchart-table {
+    border-spacing: 0;
+    border-collapse: separate;
+    margin: 0 auto;
+}
+
+.p-organizationchart .p-organizationchart-table > tbody > tr > td {
+    text-align: center;
+    vertical-align: top;
+    padding: 0;
+    padding: 0 0.75em;
+}
+
+.p-organizationchart .p-organizationchart-node-content {
+    padding: 0.5em 0.75em;
+    display: inline-block;
+    position: relative;
+    border-radius: 5px;
+}
+
+.p-organizationchart .p-organizationchart-node-content .p-node-toggler {
+    position: absolute;
+    bottom: -9px;
+    margin-left: -8px;
+    z-index: 2;
+    left: 50%;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+}
+
+.p-organizationchart .p-organizationchart-line-down {
+    margin: 0 auto;
+    height: 20px;
+    width: 1px;
+    float: none;
+}
+
+.p-organizationchart .p-organizationchart-line-right {
+    float: none;
+    border-radius: 0px;
+}
+
+.p-organizationchart .p-organizationchart-line-left {
+    float: none;
+    border-radius: 0;
+}
+
+.p-organizationchart
+    .p-organizationchart-node-content.p-organizationchart-selectable-node {
+    cursor: pointer;
+}
+
+.arrow-down {
+    background-size: cover;
+    background-image: url('https://res.cloudinary.com/danuluma/image/upload/c_scale,w_10/v1573787678/dann.svg');
+    width: 30px;
+    margin-left: -8px;
+}
+.arrow-up {
+    background-size: cover;
+    background-image: url('https://res.cloudinary.com/danuluma/image/upload/c_scale,w_10/v1573789461/dannup.svg');
+    width: 30px;
+    margin-left: -8px;
+}
+
+.node-header,
+.node-content {
+    padding: 0.5em 0.7em;
+}
+
+.node-header {
+    background-color: #495ebb;
+    color: #ffffff;
+    border-radius: 5px 5px 0 0;
+}
+
+.node-content {
+    text-align: center;
+    border: 1px solid #495ebb;
+    border-radius: 0 0 5px 5px;
+}
+
+.node-content img {
+    border-radius: 50%;
+}
+
+.p-organizationchart .p-organizationchart-node-content.p-person {
+    padding: 0;
+    border: 0 none;
+}
+
+.node-card {
+    border-radius: 20px;
+}

@@ -33,5 +33,65 @@
         "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks."
       }
     }
+  },
+  "src/lib/components/OrganizationChart/OrganizationChartComponent.react.js": {
+    "description": "",
+    "displayName": "OrganizationChartComponent",
+    "methods": [
+      {
+        "name": "nodeTemplate",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "node",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "The ID used to identify this component in Dash callbacks."
+      },
+      "value": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": "An array of nested TreeNodes",
+        "defaultValue": {
+          "value": "[]",
+          "computed": false
+        }
+      },
+      "selectionMode": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "Defines the selection mode, valid values \"single\" and \"multiple\".",
+        "defaultValue": {
+          "value": "'single'",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "Dash-assigned callback that should be called to report property changes\nto Dash, to make them available for callbacks.",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      }
+    }
   }
 }

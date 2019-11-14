@@ -1,12 +1,20 @@
-import extra_dash_ui_components
 import dash
-from dash.dependencies import Input, Output
 import dash_html_components as html
+from dash.dependencies import Input, Output
+
+import extra_dash_ui_components as ex
+from sample_data.org_data import s_data, s_data1
 
 app = dash.Dash(__name__)
 
-app.layout = html.Div([
-    extra_dash_ui_components.ExtraDashUiComponents(
+
+app.layout = html.Div(children=[
+    ex.OrganizationChartComponent(
+        id='input2',
+        value=s_data1,
+        selectionMode='single'
+    ),
+    ex.ExtraDashUiComponents(
         id='input',
         value='my-value',
         label='my-label'

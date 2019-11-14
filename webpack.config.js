@@ -4,7 +4,6 @@ const packagejson = require('./package.json');
 const dashLibraryName = packagejson.name.replace(/-/g, '_');
 
 module.exports = (env, argv) => {
-
     let mode;
 
     const overrides = module.exports || {};
@@ -25,7 +24,7 @@ module.exports = (env, argv) => {
     }
 
     let filename = (overrides.output || {}).filename;
-    if(!filename) {
+    if (!filename) {
         const modeSuffix = mode === 'development' ? 'dev' : 'min';
         filename = `${dashLibraryName}.${modeSuffix}.js`;
     }
@@ -34,12 +33,15 @@ module.exports = (env, argv) => {
 
     const devtool = overrides.devtool || 'source-map';
 
-    const externals = ('externals' in overrides) ? overrides.externals : ({
-        react: 'React',
-        'react-dom': 'ReactDOM',
-        'plotly.js': 'Plotly',
-        'prop-types': 'PropTypes',
-    });
+    const externals =
+        'externals' in overrides
+            ? overrides.externals
+            : {
+                  react: 'React',
+                  'react-dom': 'ReactDOM',
+                  'plotly.js': 'Plotly',
+                  'prop-types': 'PropTypes',
+              };
 
     return {
         mode,
@@ -67,15 +69,28 @@ module.exports = (env, argv) => {
                         {
                             loader: 'style-loader',
                             options: {
-                                insertAt: 'top'
-                            }
+                                insertAt: 'top',
+                            },
                         },
                         {
                             loader: 'css-loader',
                         },
                     ],
                 },
+                {
+                    test: /\.(png|svg|jpg|gif)$/,
+                    use: ['file-loader'],
+                },
+                {
+                    test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                    use: [
+                        {
+                            loader: 'file-loader',
+                        },
+                    ],
+                },
+                
             ],
         },
-    }
+    };
 };

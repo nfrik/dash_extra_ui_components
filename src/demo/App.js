@@ -1,14 +1,19 @@
 /* eslint no-magic-numbers: 0 */
-import React, {Component} from 'react';
+import 'primereact/resources/primereact.min.css';
+import 'primereact/resources/themes/nova-light/theme.css';
+import React, { Component } from 'react';
+import '../../extra_dash_ui_components/primeicons/primeicons.css';
+import { ExtraDashUiComponents, OrganizationChartComponent } from '../lib';
+import orgSample from './sampleData.js/orgChartData';
 
-import { ExtraDashUiComponents } from '../lib';
 
 class App extends Component {
-
     constructor() {
         super();
         this.state = {
-            value: ''
+            value: '',
+            data: orgSample.data,
+            data1: orgSample.data1,
         };
         this.setProps = this.setProps.bind(this);
     }
@@ -21,12 +26,17 @@ class App extends Component {
         return (
             <div>
                 <h1>Hello, Dash!</h1>
+                <OrganizationChartComponent
+                    setProps={e => this.setProps(e)}
+                    value={this.state.data1}
+                    selectionMode={'single'}
+                />
                 <ExtraDashUiComponents
                     setProps={this.setProps}
-                    {...this.state}
+                    value={this.state.value}
                 />
             </div>
-        )
+        );
     }
 }
 
