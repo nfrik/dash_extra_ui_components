@@ -11,21 +11,16 @@ app = dash.Dash(__name__)
 app.layout = html.Div(children=[
     ex.OrganizationChartComponent(
         id='input2',
-        value=s_data1,
+        value=s_data,
         selectionMode='single'
     ),
-    ex.ExtraDashUiComponents(
-        id='input',
-        value='my-value',
-        label='my-label'
-    ),
-    html.Div(id='output')
+
 ])
 
 
-@app.callback(Output('output', 'children'), [Input('input', 'value')])
-def display_output(value):
-    return 'You have entered {}'.format(value)
+# @app.callback(Output('output', 'children'), [Input('input', 'value')])
+# def display_output(value):
+#     return 'You have entered {}'.format(value)
 
 
 if __name__ == '__main__':
