@@ -53,13 +53,13 @@
 
 .arrow-down {
     background-size: cover;
-    background-image: url('https://res.cloudinary.com/danuluma/image/upload/c_scale,w_10/v1573787678/dann.svg');
+    /* background-image: url('../../../assets/arrowdown.svg'); */
     width: 30px;
     margin-left: -8px;
 }
 .arrow-up {
     background-size: cover;
-    background-image: url('https://res.cloudinary.com/danuluma/image/upload/c_scale,w_10/v1573789461/dannup.svg');
+    /* background-image: url('../../../assets/arrowdown.svg'); */
     width: 30px;
     margin-left: -8px;
 }
@@ -92,4 +92,13 @@
 
 .node-card {
     border-radius: 20px;
+}
+
+.p-link {
+    text-align: left;
+    background-color: transparent;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    cursor: pointer;
 }

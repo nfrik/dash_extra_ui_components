@@ -48,10 +48,6 @@ _css_dist = [
         'namespace': package_name
     },
     {
-        'relative_package_path': 'primereact/primereact.min.css',
-        'namespace': package_name
-    },
-    {
         'relative_package_path': 'primeicons/primeicons.css',
         'namespace': package_name
     }

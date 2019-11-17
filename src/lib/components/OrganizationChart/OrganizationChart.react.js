@@ -1,7 +1,6 @@
 import classNames from 'classnames';
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import './OrganizationChart.css';
 
 export class OrganizationChartNode extends Component {
     constructor(props) {
@@ -58,8 +57,10 @@ export class OrganizationChartNode extends Component {
                     <div>{this.node.label}</div>
                 ),
             toggleIcon = classNames('p-node-toggler-icon', {
-                'pi pi-chevron-down arrow-down': this.state.expanded,
-                'pi pi-chevron-up arrow-up': !this.state.expanded,
+                'pi pi-chevron-down ': this.state.expanded,
+                'pi pi-chevron-up ': !this.state.expanded,
+                // 'pi pi-chevron-down arrow-down': this.state.expanded,
+                // 'pi pi-chevron-up arrow-up': !this.state.expanded,
             }),
             nodeContent = (
                 <tr>
@@ -116,7 +117,6 @@ export class OrganizationChartNode extends Component {
                                             index !== nodeChildLength - 1,
                                     }
                                 );
-                            console.log(leftClass, rightClass);
 
                             return [
                                 <td

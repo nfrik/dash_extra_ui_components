@@ -1,4 +1,4 @@
-s_data = [
+sample1 = [
     {
         'label': 'F.C Barcelona',
         'expanded': True,
@@ -31,7 +31,7 @@ s_data = [
     },
 ]
 
-s_data1 = [
+sample2 = [
     {
         'label': 'CEO',
         'type': 'person',

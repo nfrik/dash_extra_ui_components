@@ -1,11 +1,7 @@
 /* eslint no-magic-numbers: 0 */
-import 'primereact/resources/primereact.min.css';
-import 'primereact/resources/themes/nova-light/theme.css';
 import React, { Component } from 'react';
-import '../../extra_dash_ui_components/primeicons/primeicons.css';
 import { ExtraDashUiComponents, OrganizationChartComponent } from '../lib';
 import orgSample from './sampleData.js/orgChartData';
-
 
 class App extends Component {
     constructor() {
@@ -14,11 +10,13 @@ class App extends Component {
             value: '',
             data: orgSample.data,
             data1: orgSample.data1,
+            selection: null,
         };
         this.setProps = this.setProps.bind(this);
     }
 
     setProps(newProps) {
+        console.log(newProps)
         this.setState(newProps);
     }
 
@@ -27,9 +25,10 @@ class App extends Component {
             <div>
                 <h1>Hello, Dash!</h1>
                 <OrganizationChartComponent
-                    setProps={e => this.setProps(e)}
+                    setProps={this.setProps}
                     value={this.state.data1}
-                    selectionMode={'single'}
+                    selectionMode='multiple'
+                    selection={this.state.selection}
                 />
                 <ExtraDashUiComponents
                     setProps={this.setProps}

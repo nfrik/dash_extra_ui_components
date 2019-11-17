@@ -3,13 +3,9 @@ include extra_dash_ui_components/extra_dash_ui_components.min.js.map
 include extra_dash_ui_components/metadata.json
 include extra_dash_ui_components/package-info.json
 include extra_dash_ui_components/nova-light/*.css
-include extra_dash_ui_components/nova-light/fonts/*
 include extra_dash_ui_components/primeicons/fonts/*
 include extra_dash_ui_components/primeicons/raw-svg/*
-include extra_dash_ui_components/primeicons/dann.svg
 include extra_dash_ui_components/primeicons/*.css
-include extra_dash_ui_components/primereact/*.css
-include extra_dash_ui_components/primereact/images/*
 include README.md
 include LICENSE
 include package.json

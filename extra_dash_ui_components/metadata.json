@@ -35,7 +35,7 @@
     }
   },
   "src/lib/components/OrganizationChart/OrganizationChartComponent.react.js": {
-    "description": "",
+    "description": "OrganizationChartComponent is a component to nicely display a data tree.\nIt takes a property, `value`, which is the actual data object\ncreates a hierachy tree which is then rendered.\nOther inputs are `selectionMode`, `selection`, `className` and `style`\nwhich are optional. Defaults will be applied unless provided by the user.",
     "displayName": "OrganizationChartComponent",
     "methods": [
       {
@@ -57,27 +57,81 @@
           "name": "string"
         },
         "required": false,
-        "description": "The ID used to identify this component in Dash callbacks."
+        "description": "The ID used to identify this component in Dash callbacks.",
+        "defaultValue": {
+          "value": "`${Math.random()}`",
+          "computed": false
+        }
       },
       "value": {
         "type": {
           "name": "array"
         },
+        "required": true,
+        "description": "An array of nested TreeNodes"
+      },
+      "selectionMode": {
+        "type": {
+          "name": "enum",
+          "value": [
+            {
+              "value": "'single'",
+              "computed": false
+            },
+            {
+              "value": "'multiple'",
+              "computed": false
+            }
+          ]
+        },
         "required": false,
-        "description": "An array of nested TreeNodes",
+        "description": "Defines the selection mode, valid values \"single\" or \"multiple\".",
         "defaultValue": {
-          "value": "[]",
+          "value": "null",
           "computed": false
         }
       },
-      "selectionMode": {
+      "selection": {
+        "type": {
+          "name": "union",
+          "value": [
+            {
+              "name": "object"
+            },
+            {
+              "name": "arrayOf",
+              "value": {
+                "name": "object"
+              }
+            }
+          ]
+        },
+        "required": false,
+        "description": "A single treenode instance or an array to refer to the selections.",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "className": {
         "type": {
           "name": "string"
         },
         "required": false,
-        "description": "Defines the selection mode, valid values \"single\" and \"multiple\".",
+        "description": "Style class of the component.",
         "defaultValue": {
-          "value": "'single'",
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "Inline style of the component.",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       },

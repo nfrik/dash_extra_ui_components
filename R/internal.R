@@ -21,12 +21,6 @@ all_files = FALSE), class = "html_dependency"),
 version = "3", src = list(href = NULL,
 file = "deps"), meta = NULL,
 script = NULL,
-stylesheet = 'primereact/primereact.min.css', head = NULL, attachment = NULL, package = "extraDashUiComponents",
-all_files = FALSE), class = "html_dependency"),
-`extra_dash_ui_components` = structure(list(name = "extra_dash_ui_components",
-version = "4", src = list(href = NULL,
-file = "deps"), meta = NULL,
-script = NULL,
 stylesheet = 'primeicons/primeicons.css', head = NULL, attachment = NULL, package = "extraDashUiComponents",
 all_files = FALSE), class = "html_dependency"))
 return(deps_metadata)
