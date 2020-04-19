@@ -255,6 +255,9 @@ loadButton = html.Button(
     id='load-button',
     value='Load'
 )
+
+def onDataChange(newData):
+    print("---------------------------------------------------------------")
 app.layout = html.Div(children=[
     ex.CaptchaDashUiComponents(
         id='captcha',
@@ -326,17 +329,6 @@ app.layout = html.Div(children=[
     #     # className='', # css style
 
     # ),
-    ex.TrelloComponent(
-        value=TrelloData,
-        draggable=True,
-        laneDraggable=True,
-        cardDraggable=True,
-        collapsibleLanes=True,
-        editable=True,
-        canAddLanes=True,
-        hideCardDeleteIcon=True,
-        editLaneTitle=True   
-    ),
     ex.CarouselComponent(
         id='input5',
         value=cars_carousel,
@@ -352,14 +344,10 @@ app.layout = html.Div(children=[
     html.Div(id='output0'),
     html.Div(id='output2'),
     html.Div(id='output5'),
-
-
-
-
     html.H4('Paginator Default Preview'),
      ex.PaginatorDashUiComponents(
          id='paginator-default',
-        first=first,
+         first=first,
          rows=rows,
          totalRecords=120,
          rowsPerPageOptions=[10, 20, 30],
@@ -385,6 +373,21 @@ app.layout = html.Div(children=[
             header="Scroll Down to Load More"
         )
     ], className='content-section implementation'),
+    html.Div([
+        ex.TrelloComponent(
+            id ="Trello1",
+            value=TrelloData,
+            draggable=True,
+            laneDraggable=True,
+            cardDraggable=True,
+            collapsibleLanes=True,
+            editable=True,
+            canAddLanes=True,
+            hideCardDeleteIcon=True,
+            editLaneTitle=True,
+        ),
+        html.Div(id='Trello_Trello')
+    ]),
     html.H4('PDF Viewer Preview'),
     ex.PDFViewerComponent(
             url='https://arxiv.org/pdf/quant-ph/0410100.pdf',
@@ -420,6 +423,7 @@ def display_output(text, first, rows):
 def display_output5(selection):
     icon = f"Clicked on: {selection['action'] if selection else 'None'} icon"
     item = f"  of {selection['item'] if selection else 'None'} item"
+    print("----------------------------------------")
     return icon + item
 
 @app.callback(Output('output1', 'children'), [Input('paginator-default1', 'first'),
@@ -433,6 +437,10 @@ def display_output1(first, rows):
 def tree_output(exKey):
     return 'Tree expandedKeys: {}'.format(exKey)
 
+@app.callback(Output('Trello_Trello', 'children'),[Input('Trello1', 'onCardClick')])
+def onCardClick(onCardClick):
+    print("-----------", onCardClick)
+    
 
 @app.callback(Output('tree-output-select', 'children'), [Input('tree', 'selectionKeys')])
 def tree_output1(selectionKeys):

@@ -76,6 +76,10 @@ class App extends Component {
         console.log('Expired');
     }
 
+    onDataChange(newData) {
+        console.log(newData)
+    }
+
     onPageChange(event) {
         this.setState({
             first: event.first,
@@ -461,7 +465,7 @@ class App extends Component {
                     setProps={this.setProps}
                 /> */}
                 {/* <MicrophoneDashUiComponents/> */}
-                <TrelloComponent value = { TrelloData } draggable = {true}/>
+                <TrelloComponent value = { TrelloData } draggable = {true} onDataChange = { this.onDataChange }/>
             </div>
         );
     }
