@@ -108,6 +108,66 @@ responsiveOptions = [
     },
 ]
 
+TrelloData = {
+    "lanes": [
+        {
+        "id": "PLANNED",
+        "title": "Planned Tasks",
+        "style": {
+            "width": 280
+        },
+        "cards": [
+            {
+            "id": "Milk",
+            "title": "Buy milk",
+            "label": "15 mins",
+            "description": "2 Gallons of milk at the Deli store"
+            },
+            {
+            "id": "Plan2",
+            "title": "Dispose Garbage",
+            "label": "10 mins",
+            "description": "Sort out recyclable and waste as needed"
+            },
+            {
+            "id": "Plan3",
+            "title": "Write Blog",
+            "label": "30 mins",
+            "description": "Can AI make memes?"
+            },
+            {
+            "id": "Plan4",
+            "title": "Pay Rent",
+            "label": "5 mins",
+            "description": "Transfer to bank account"
+            }
+        ]
+        },
+        {
+        "id": "WIP",
+        "title": "Work In Progress",
+        "style": {
+            "width": 280
+        },
+        "cards": [
+            {
+            "id": "Wip1",
+            "title": "Clean House",
+            "label": "30 mins",
+            "description": "Soap wash and polish floor. Polish windows and doors. Scrap all broken glasses"
+            }
+        ]
+        },
+        {
+        "id": "BLOCKED",
+        "title": "Blocked",
+        "style": {
+            "width": 280
+        },
+        "cards": []
+        },
+    ]
+}
 
 data = [
     {
@@ -267,6 +327,7 @@ app.layout = html.Div(children=[
 
     # ),
     ex.TrelloComponent(
+        value=TrelloData,
         draggable=True,
         laneDraggable=True,
         cardDraggable=True,
@@ -296,22 +357,22 @@ app.layout = html.Div(children=[
 
 
     html.H4('Paginator Default Preview'),
-    ex.PaginatorDashUiComponents(
-        id='paginator-default',
+     ex.PaginatorDashUiComponents(
+         id='paginator-default',
         first=first,
-        rows=rows,
-        totalRecords=120,
-        rowsPerPageOptions=[10, 20, 30],
-    ),
-    html.H4('Paginator Custom Template Preview'),
-    ex.PaginatorDashUiComponents(
-        id='paginator-default1',
-        first=first,
-        rows=rows,
-        totalRecords=120,
-        rowsPerPageOptions=[10, 20, 30],
-        template="FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
-    ),
+         rows=rows,
+         totalRecords=120,
+         rowsPerPageOptions=[10, 20, 30],
+     ),
+     html.H4('Paginator Custom Template Preview'),
+     ex.PaginatorDashUiComponents(
+         id='paginator-default1',
+         first=first,
+         rows=rows,
+         totalRecords=120,
+         rowsPerPageOptions=[10, 20, 30],
+         template="FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
+     ),
     
     html.Div(id='output1'),
     html.H4('Datascroller inline Preview  -------------------------------'),

@@ -13,6 +13,7 @@ import {
 } from '../lib';
 import {carsCarousel} from './sampleData/carouselData';
 import orgSample from './sampleData/orgChartData';
+import data from "../lib/components/Trello/data.json"
 
 class App extends Component {
     constructor() {
@@ -294,6 +295,67 @@ class App extends Component {
             },
         ];
 
+        const TrelloData = {
+            "lanes": [
+              {
+                "id": "PLANNED",
+                "title": "Planned Tasks",
+                "style": {
+                  "width": 280
+                },
+                "cards": [
+                  {
+                    "id": "Milk",
+                    "title": "Buy milk",
+                    "label": "15 mins",
+                    "description": "2 Gallons of milk at the Deli store"
+                  },
+                  {
+                    "id": "Plan2",
+                    "title": "Dispose Garbage",
+                    "label": "10 mins",
+                    "description": "Sort out recyclable and waste as needed"
+                  },
+                  {
+                    "id": "Plan3",
+                    "title": "Write Blog",
+                    "label": "30 mins",
+                    "description": "Can AI make memes?"
+                  },
+                  {
+                    "id": "Plan4",
+                    "title": "Pay Rent",
+                    "label": "5 mins",
+                    "description": "Transfer to bank account"
+                  }
+                ]
+              },
+              {
+                "id": "WIP",
+                "title": "Work In Progress",
+                "style": {
+                  "width": 280
+                },
+                "cards": [
+                  {
+                    "id": "Wip1",
+                    "title": "Clean House",
+                    "label": "30 mins",
+                    "description": "Soap wash and polish floor. Polish windows and doors. Scrap all broken glasses"
+                  }
+                ]
+              },
+              {
+                "id": "BLOCKED",
+                "title": "Blocked",
+                "style": {
+                  "width": 280
+                },
+                "cards": []
+              },
+            ]
+        }
+          
         return (
             <div>
                 {/* <CarouselComponent
@@ -399,7 +461,7 @@ class App extends Component {
                     setProps={this.setProps}
                 /> */}
                 {/* <MicrophoneDashUiComponents/> */}
-                <TrelloComponent draggable = {true}/>
+                <TrelloComponent value = { TrelloData } draggable = {true}/>
             </div>
         );
     }

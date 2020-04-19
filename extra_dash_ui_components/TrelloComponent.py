@@ -8,6 +8,7 @@ class TrelloComponent(Component):
 Component to render a button element
 
 Keyword arguments:
+- value (dict; optional)
 - draggable (boolean; default False)
 - laneDraggable (boolean; default True)
 - cardDraggable (boolean; default True)
@@ -17,12 +18,12 @@ Keyword arguments:
 - hideCardDeleteIcon (boolean; default True)
 - editLaneTitle (boolean; default True)"""
     @_explicitize_args
-    def __init__(self, draggable=Component.UNDEFINED, laneDraggable=Component.UNDEFINED, cardDraggable=Component.UNDEFINED, collapsibleLanes=Component.UNDEFINED, editable=Component.UNDEFINED, canAddLanes=Component.UNDEFINED, hideCardDeleteIcon=Component.UNDEFINED, editLaneTitle=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['draggable', 'laneDraggable', 'cardDraggable', 'collapsibleLanes', 'editable', 'canAddLanes', 'hideCardDeleteIcon', 'editLaneTitle']
+    def __init__(self, value=Component.UNDEFINED, draggable=Component.UNDEFINED, laneDraggable=Component.UNDEFINED, cardDraggable=Component.UNDEFINED, collapsibleLanes=Component.UNDEFINED, editable=Component.UNDEFINED, canAddLanes=Component.UNDEFINED, hideCardDeleteIcon=Component.UNDEFINED, editLaneTitle=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['value', 'draggable', 'laneDraggable', 'cardDraggable', 'collapsibleLanes', 'editable', 'canAddLanes', 'hideCardDeleteIcon', 'editLaneTitle']
         self._type = 'TrelloComponent'
         self._namespace = 'extra_dash_ui_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['draggable', 'laneDraggable', 'cardDraggable', 'collapsibleLanes', 'editable', 'canAddLanes', 'hideCardDeleteIcon', 'editLaneTitle']
+        self.available_properties = ['value', 'draggable', 'laneDraggable', 'cardDraggable', 'collapsibleLanes', 'editable', 'canAddLanes', 'hideCardDeleteIcon', 'editLaneTitle']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')
