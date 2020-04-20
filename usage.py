@@ -366,9 +366,9 @@ app.layout = html.Div(children=[
 @app.callback(Output('out','children'), [Input('Trello1','event'), 
                                          Input('Trello1','cardId'),
                                          Input('Trello1','landId'),
-                                         ])
-def chageData(event, cardId, landId):
-    print(event, cardId, landId)
+                                         Input('Trello1', 'changedData')])
+def chageData(event, cardId, landId,changedData):
+    print(event, cardId, landId,changedData)
     return '{}'.format(event)
 
 @app.callback(Output('output', 'children'), [Input('tree', 'id'),
