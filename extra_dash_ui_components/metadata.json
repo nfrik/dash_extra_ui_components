@@ -6092,211 +6092,21 @@
     }
   },
   "src/lib/components/Trello/TrelloComponent.js": {
-    "description": "Component to render a button element",
+    "description": "",
     "displayName": "TrelloComponent",
-    "methods": [
-      {
-        "name": "handleDragStart",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "cardId",
-            "type": null
-          },
-          {
-            "name": "laneId",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "handleDragEnd",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "cardId",
-            "type": null
-          },
-          {
-            "name": "sourceLaneId",
-            "type": null
-          },
-          {
-            "name": "targetLaneId",
-            "type": null
-          },
-          {
-            "name": "position",
-            "type": null
-          },
-          {
-            "name": "cardDetails",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "handleLaneDragStart",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "laneId",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "handleLaneDragEnd",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "removedIndex",
-            "type": null
-          },
-          {
-            "name": "addedIndex",
-            "type": null
-          },
-          {
-            "name": "payload",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "onDataChange",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "newData",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "onCardClick",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "cardId",
-            "type": null
-          },
-          {
-            "name": "metadata",
-            "type": null
-          },
-          {
-            "name": "laneId",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "onCardAdd",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "card",
-            "type": null
-          },
-          {
-            "name": "laneId",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "onConfirmCardDelete",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "callback",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "onCardDelete",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "cardId",
-            "type": null
-          },
-          {
-            "name": "laneId",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "onCardMoveAcrossLanes",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "fromLaneId",
-            "type": null
-          },
-          {
-            "name": "toLaneId",
-            "type": null
-          },
-          {
-            "name": "cardId",
-            "type": null
-          },
-          {
-            "name": "index",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "onLaneAdd",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "params",
-            "type": null
-          }
-        ],
-        "returns": null
-      },
-      {
-        "name": "onLaneDelete",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "laneId",
-            "type": null
-          }
-        ],
-        "returns": null
-      }
-    ],
+    "methods": [],
     "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
       "value": {
         "type": {
           "name": "object"
@@ -6393,6 +6203,138 @@
         "description": "",
         "defaultValue": {
           "value": "true",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "changedData": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "cardId": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "landId": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "event": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "sourceLaneId": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "targetLaneId": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "position": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "cardDetails": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "landParams": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "metaData": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "card": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
           "computed": false
         }
       }

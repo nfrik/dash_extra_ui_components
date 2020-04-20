@@ -362,7 +362,7 @@ class App extends Component {
           
         return (
             <div>
-                {/* <CarouselComponent
+                <CarouselComponent
                     value={carsCarousel}
                     numVisible={4}
                     numScroll={1}
@@ -373,7 +373,7 @@ class App extends Component {
                     // setProps={this.setProps}
                     circular={true}
                     autoplayInterval={2000}
-                /> */}
+                />
                 {/* <RatingComponent
                     value={this.state.value}
                     setProps={this.setProps}
@@ -465,7 +465,7 @@ class App extends Component {
                     setProps={this.setProps}
                 /> */}
                 {/* <MicrophoneDashUiComponents/> */}
-                <TrelloComponent value = { TrelloData } draggable = {true} onDataChange = { this.onDataChange }/>
+                <TrelloComponent value = { TrelloData } draggable = {true}/>
             </div>
         );
     }

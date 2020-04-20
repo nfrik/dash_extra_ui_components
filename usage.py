@@ -256,8 +256,10 @@ loadButton = html.Button(
     value='Load'
 )
 
-def onDataChange(newData):
-    print("---------------------------------------------------------------")
+def newData():
+    print("??????????????????이럴수가??")
+    return func(*args, **kwargs)
+
 app.layout = html.Div(children=[
     ex.CaptchaDashUiComponents(
         id='captcha',
@@ -292,43 +294,6 @@ app.layout = html.Div(children=[
             header="Scroll Down to Load More"
         )
     ], className='content-section implementation'),
-    # ex.OrganizationChartComponent(
-    #     id='input2', # a unique identifier
-    #     value=sample2, # required
-    #     selectionMode='single', # 'single' or 'multiple' optional
-    #     # selection={} # object {} or array []
-    #     # className='' # string - css class
-    #     # style={} # inline style object
-
-    # ),
-    # ex.ListBoxComponent(
-    #     id='input3',
-    #     # value=[], #optional default null
-    #     filter=True, #optional default False
-    #     options=cities, #required
-    #     style={'width': '15em'}, #optional
-    #     listStyle={'maxHeight': '100px'}, #optional
-    #     listContainerStyle={'maxHeight': '300px'}, #optional
-    #     multiple=True, #optional default False
-    #     disabled=False, #optional default False
-    #     # tooltip='test', #optional
-    #     # tooltipOptions= {}, #optional
-    #     # className='', # css style
-
-    # ),
-    # ex.RatingComponent(
-    #     id='input4',
-    #     stars=5, #required default 5
-    #     value=1, #optional, number. default null
-    #     # disabled=True, #optional default False
-    #     readonly=False, #optional default False
-    #     cancel=True, # optional. Whether or not to display cancel icon. default false
-    #     # style={}, #optional Inline style
-    #     # tooltip='test', #optional
-    #     # tooltipOptions= {}, #optional
-    #     # className='', # css style
-
-    # ),
     ex.CarouselComponent(
         id='input5',
         value=cars_carousel,
@@ -373,21 +338,19 @@ app.layout = html.Div(children=[
             header="Scroll Down to Load More"
         )
     ], className='content-section implementation'),
-    html.Div([
-        ex.TrelloComponent(
-            id ="Trello1",
-            value=TrelloData,
-            draggable=True,
-            laneDraggable=True,
-            cardDraggable=True,
-            collapsibleLanes=True,
-            editable=True,
-            canAddLanes=True,
-            hideCardDeleteIcon=True,
-            editLaneTitle=True,
-        ),
-        html.Div(id='Trello_Trello')
-    ]),
+    ex.TrelloComponent(
+        id ="Trello1",
+        value=TrelloData,
+        draggable=True,
+        laneDraggable=True,
+        cardDraggable=True,
+        collapsibleLanes=True,
+        editable=True,
+        canAddLanes=True,
+        hideCardDeleteIcon=True,
+        editLaneTitle=True,
+    ),
+    html.Div(id='out'),
     html.H4('PDF Viewer Preview'),
     ex.PDFViewerComponent(
             url='https://arxiv.org/pdf/quant-ph/0410100.pdf',
@@ -400,6 +363,13 @@ app.layout = html.Div(children=[
 # def page_change(first, rows):
 #     return "asdf"
 
+@app.callback(Output('out','children'), [Input('Trello1','event'), 
+                                         Input('Trello1','cardId'),
+                                         Input('Trello1','landId'),
+                                         ])
+def chageData(event, cardId, landId):
+    print(event, cardId, landId)
+    return '{}'.format(event)
 
 @app.callback(Output('output', 'children'), [Input('tree', 'id'),
                                              Input(
@@ -418,16 +388,15 @@ def display_output(text, first, rows):
 # def display_output1(selection):
 #     return 'Rating: {}'.format(selection)
 
-
 @app.callback(Output('output5', 'children'), [Input('input5', 'clicked')])
 def display_output5(selection):
     icon = f"Clicked on: {selection['action'] if selection else 'None'} icon"
     item = f"  of {selection['item'] if selection else 'None'} item"
-    print("----------------------------------------")
     return icon + item
 
 @app.callback(Output('output1', 'children'), [Input('paginator-default1', 'first'),
-                                              Input('paginator-default1', 'rows'), ])
+                                              Input('paginator-default1', 'rows'), 
+                                              ])
 def display_output1(first, rows):
     # check value
     return 'First value is: {}, Rows value is {}'.format(first, rows)
@@ -437,9 +406,9 @@ def display_output1(first, rows):
 def tree_output(exKey):
     return 'Tree expandedKeys: {}'.format(exKey)
 
-@app.callback(Output('Trello_Trello', 'children'),[Input('Trello1', 'onCardClick')])
-def onCardClick(onCardClick):
-    print("-----------", onCardClick)
+# @app.callback(Output('Trello_Trello', 'children'),[Input('Trello1', 'onCardClick')])
+# def onCardClick(onCardClick):
+#     print("-----------", onCardClick)
     
 
 @app.callback(Output('tree-output-select', 'children'), [Input('tree', 'selectionKeys')])
