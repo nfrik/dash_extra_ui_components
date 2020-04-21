@@ -4,6 +4,9 @@ from .CaptchaDashUiComponents import CaptchaDashUiComponents
 from .Carousel import Carousel
 from .CarouselComponent import CarouselComponent
 from .DataScrollerDashUiComponents import DataScrollerDashUiComponents
+from .Geolocator import Geolocator
+from .GeolocatorComponent import GeolocatorComponent
+from .GeolocatorDashUiComponents import GeolocatorDashUiComponents
 from .InputText import InputText
 from .ListBox import ListBox
 from .ListBoxComponent import ListBoxComponent
@@ -41,6 +44,9 @@ __all__ = [
     "Carousel",
     "CarouselComponent",
     "DataScrollerDashUiComponents",
+    "Geolocator",
+    "GeolocatorComponent",
+    "GeolocatorDashUiComponents",
     "InputText",
     "ListBox",
     "ListBoxComponent",

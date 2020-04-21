@@ -8,7 +8,15 @@ class GeolocatorComponent extends Component {
     super(props);
   }
 
+  getPosition(position) {
+   this.setProps({
+     location : position
+   })
+  }
+
   render() {
+    let geolocationProvider = navigator.geolocation;
+    
     return (
       <div id={this.props.id}>
         <Geolocator 
@@ -17,10 +25,11 @@ class GeolocatorComponent extends Component {
           userDecisionTimeout = {this.props.userDecisionTimeout}
           suppressLocationOnMount = {this.props.suppressLocationOnMount}          
           isOptimisticGeolocationEnabled = {this.props.isOptimisticGeolocationEnabled}
-          geolocationProvider = {navigator.geolocation}          
+          geolocationProvider = { geolocationProvider }
           onSuccess = {this.props.onSuccess}
           onError = {this.props.onError}
           errorMsg = {this.props.errorMsg}
+          getPosition = { this.getPosition }
         />
       </div>
     )
@@ -28,12 +37,14 @@ class GeolocatorComponent extends Component {
 }
 
 GeolocatorComponent.defaultProps = {
+  setProps : () => {},
   id: null,
   positionOptions: {
     enableHighAccuracy: true,
     maximumAge: 0,
     timeout: 5000,
   },
+  location : null,
   watchPosition: true,
   userDecisionTimeout: null,
   suppressLocationOnMount: false,
@@ -47,12 +58,14 @@ GeolocatorComponent.defaultProps = {
 };
 
 GeolocatorComponent.propTypes = {
+  location : PropTypes.object,
+  setProps : PropTypes.func,
   id: PropTypes.string,
   positionOptions: PropTypes.object,
   watchPosition: PropTypes.bool,
   userDecisionTimeout: PropTypes.number,
   suppressLocationOnMount: PropTypes.bool,
-  isOptimisticGeolocationEnabled: PropTypes.bool,  
+  isOptimisticGeolocationEnabled: PropTypes.bool,
   errorMsg: PropTypes.object,
   onSuccess: PropTypes.func,
   onError: PropTypes.func,

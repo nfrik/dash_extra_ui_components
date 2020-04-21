@@ -209,9 +209,9 @@ app.layout = html.Div(children=[
     ),
     html.H4('geolocator Preview'),
     ex.GeolocatorComponent(
-        id='geolocator'
+        id='Geolocator1'
     ),
-
+    html.Div(id='GoelocatorOutput'),
     html.H4('breadcrumbs Preview'),
     ex.BreadcrumbsDashUiComponents(
         id='breadcrumbs',
@@ -295,10 +295,7 @@ app.layout = html.Div(children=[
     html.Div(id='output0'),
     html.Div(id='output2'),
     html.Div(id='output5'),
-
-
-
-
+    
     html.H4('Paginator Default Preview'),
     ex.PaginatorDashUiComponents(
         id='paginator-default',
@@ -353,6 +350,10 @@ def display_output(text, first, rows):
 # def display_output0(selection):
 #     return 'You have selected {}'.format(selection)
 
+@app.callback(Output('GoelocatorOutput','children'),[Input('Geolocator1', 'location')])
+def getGeolocator(location):
+    print(location)
+    return '{}'.format(location)
 
 # @app.callback(Output('output1', 'children'), [Input('input4', 'value')])
 # def display_output1(selection):

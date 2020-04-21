@@ -1301,6 +1301,338 @@
       }
     }
   },
+  "src/lib/components/Geolocator/Geolocator.js": {
+    "description": "",
+    "displayName": "Geolocator",
+    "methods": [
+      {
+        "name": "componentDidMount",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "componentWillUnmount",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "getCurrentLocation",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "watchCurrentLocation",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "onPositionSuccess",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "position",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onPositionError",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "positionError",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "cancelUserDecisionTimeout",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      }
+    ],
+    "props": {
+      "positionOptions": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{\r\n  enableHighAccuracy: true,\r\n  maximumAge: 0,\r\n  timeout: 5000,\r\n}",
+          "computed": false
+        }
+      },
+      "watchPosition": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "userDecisionTimeout": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "suppressLocationOnMount": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "geolocationProvider": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "navigator.geolocation",
+          "computed": true
+        }
+      },
+      "isOptimisticGeolocationEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "onSuccess": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "function(success) {console.log(success)}",
+          "computed": false
+        }
+      },
+      "onError": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "function(error) {console.log(error)}",
+          "computed": false
+        }
+      },
+      "errorMsg": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{\r\n  isGeolocationAvailable: \"Your browser does not support Geolocation\",\r\n  isGeolocationEnabled: \"Geolocation is not enabled\"\r\n}",
+          "computed": false
+        }
+      },
+      "getPosition": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
+  "src/lib/components/Geolocator/GeolocatorComponent.react.js": {
+    "description": "",
+    "displayName": "GeolocatorComponent",
+    "methods": [
+      {
+        "name": "getPosition",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "position",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "location": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "positionOptions": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{\r\n  enableHighAccuracy: true,\r\n  maximumAge: 0,\r\n  timeout: 5000,\r\n}",
+          "computed": false
+        }
+      },
+      "watchPosition": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "userDecisionTimeout": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "suppressLocationOnMount": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "false",
+          "computed": false
+        }
+      },
+      "isOptimisticGeolocationEnabled": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "errorMsg": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "{\r\n  isGeolocationAvailable: \"Your browser does not support Geolocation\",\r\n  isGeolocationEnabled: \"Geolocation is not enabled\"\r\n}",
+          "computed": false
+        }
+      },
+      "onSuccess": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "function(success){ console.log(success) }",
+          "computed": false
+        }
+      },
+      "onError": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "function(error){ console.log(error)}",
+          "computed": false
+        }
+      }
+    }
+  },
+  "src/lib/components/Geolocator/GeolocatorDashUiComponents.react.js": {
+    "description": "",
+    "displayName": "GeolocatorDashUiComponents",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      }
+    }
+  },
   "src/lib/components/Inputtext/InputText.js": {
     "description": "InputText Bar.\r\ndisplays on top of the search box component if filter is set to true",
     "displayName": "InputText",

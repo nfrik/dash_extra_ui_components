@@ -37,6 +37,7 @@ class Geolocator extends Component {
   }  
 
   componentWillUnmount = () => {
+    debugger
     this.cancelUserDecisionTimeout();
     if (this.props.watchPosition) {
       this.props.geolocationProvider.clearWatch(this.state.watchId);
@@ -99,7 +100,7 @@ class Geolocator extends Component {
       isGeolocationEnabled: true,
       positionError: null,
     })
-
+    this.props.getPosition(position)
     this.props.onSuccess(position)
   }
 
@@ -120,7 +121,6 @@ class Geolocator extends Component {
   };
 
   render() {
-
     return !this.state.isGeolocationAvailable ? (
       <div>        
         {this.props.errorMsg.isGeolocationAvailable}
@@ -170,6 +170,7 @@ Geolocator.propTypes = {
   onSuccess: PropTypes.func,
   onError: PropTypes.func, 
   errorMsg: PropTypes.object,
+  getPosition : PropTypes.func,
 }
 
 Geolocator.defaultProps = {
