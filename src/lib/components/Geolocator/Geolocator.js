@@ -100,7 +100,7 @@ class Geolocator extends Component {
       isGeolocationEnabled: true,
       positionError: null,
     })
-    this.props.getPosition(position)
+    this.props.getPosition(this.state.coords)
     this.props.onSuccess(position)
   }
 

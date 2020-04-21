@@ -1477,22 +1477,9 @@
   "src/lib/components/Geolocator/GeolocatorComponent.react.js": {
     "description": "",
     "displayName": "GeolocatorComponent",
-    "methods": [
-      {
-        "name": "getPosition",
-        "docblock": null,
-        "modifiers": [],
-        "params": [
-          {
-            "name": "position",
-            "type": null
-          }
-        ],
-        "returns": null
-      }
-    ],
+    "methods": [],
     "props": {
-      "location": {
+      "position": {
         "type": {
           "name": "object"
         },

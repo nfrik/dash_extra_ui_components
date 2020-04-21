@@ -10,11 +10,11 @@ class GeolocatorDashUiComponents extends Component {
     }
 
     render() {
-        const {
-            isGeolocationAvailable,
-            isGeolocationEnabled,
-            coords,
-        } = this.props;
+        // const {
+        //     isGeolocationAvailable,
+        //     isGeolocationEnabled,
+        //     coords,
+        // } = this.props;
 
         return !this.props.isGeolocationAvailable ? (
             <div>Your browser does not support Geolocation</div>

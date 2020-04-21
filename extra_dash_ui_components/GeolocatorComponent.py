@@ -8,7 +8,7 @@ class GeolocatorComponent(Component):
 
 
 Keyword arguments:
-- location (dict; optional)
+- position (dict; optional)
 - id (string; optional)
 - positionOptions (dict; default {
   enableHighAccuracy: true,
@@ -24,12 +24,12 @@ Keyword arguments:
   isGeolocationEnabled: "Geolocation is not enabled"
 })"""
     @_explicitize_args
-    def __init__(self, location=Component.UNDEFINED, id=Component.UNDEFINED, positionOptions=Component.UNDEFINED, watchPosition=Component.UNDEFINED, userDecisionTimeout=Component.UNDEFINED, suppressLocationOnMount=Component.UNDEFINED, isOptimisticGeolocationEnabled=Component.UNDEFINED, errorMsg=Component.UNDEFINED, onSuccess=Component.UNDEFINED, onError=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['location', 'id', 'positionOptions', 'watchPosition', 'userDecisionTimeout', 'suppressLocationOnMount', 'isOptimisticGeolocationEnabled', 'errorMsg']
+    def __init__(self, position=Component.UNDEFINED, id=Component.UNDEFINED, positionOptions=Component.UNDEFINED, watchPosition=Component.UNDEFINED, userDecisionTimeout=Component.UNDEFINED, suppressLocationOnMount=Component.UNDEFINED, isOptimisticGeolocationEnabled=Component.UNDEFINED, errorMsg=Component.UNDEFINED, onSuccess=Component.UNDEFINED, onError=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['position', 'id', 'positionOptions', 'watchPosition', 'userDecisionTimeout', 'suppressLocationOnMount', 'isOptimisticGeolocationEnabled', 'errorMsg']
         self._type = 'GeolocatorComponent'
         self._namespace = 'extra_dash_ui_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['location', 'id', 'positionOptions', 'watchPosition', 'userDecisionTimeout', 'suppressLocationOnMount', 'isOptimisticGeolocationEnabled', 'errorMsg']
+        self.available_properties = ['position', 'id', 'positionOptions', 'watchPosition', 'userDecisionTimeout', 'suppressLocationOnMount', 'isOptimisticGeolocationEnabled', 'errorMsg']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

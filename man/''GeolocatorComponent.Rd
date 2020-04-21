@@ -10,13 +10,13 @@
 }
 
 \usage{
-''GeolocatorComponent(location=NULL, id=NULL, positionOptions=NULL, watchPosition=NULL,
+''GeolocatorComponent(position=NULL, id=NULL, positionOptions=NULL, watchPosition=NULL,
 userDecisionTimeout=NULL, suppressLocationOnMount=NULL,
 isOptimisticGeolocationEnabled=NULL, errorMsg=NULL, onSuccess=NULL, onError=NULL)
 }
 
 \arguments{
-\item{location}{Named list. }
+\item{position}{Named list. }
 
 \item{id}{Character. }
 

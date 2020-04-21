@@ -8,18 +8,13 @@ class GeolocatorComponent extends Component {
     super(props);
   }
 
-  getPosition(position) {
-   this.setProps({
-     location : position
-   })
-  }
-
   render() {
     let geolocationProvider = navigator.geolocation;
     
     return (
       <div id={this.props.id}>
         <Geolocator 
+          id = { this.props.id }
           positionOptions = {this.props.positionOptions}
           watchPosition = {this.props.watchPosition}
           userDecisionTimeout = {this.props.userDecisionTimeout}
@@ -29,7 +24,21 @@ class GeolocatorComponent extends Component {
           onSuccess = {this.props.onSuccess}
           onError = {this.props.onError}
           errorMsg = {this.props.errorMsg}
-          getPosition = { this.getPosition }
+          getPosition = { (position) => {
+            let geoPosition = {
+              latitude : position.latitude,
+              accuracy: position.accuracy,
+              altitude: position.altitude,
+              altitudeAccuracy: position.altitudeAccuracy,
+              heading: position.heading,
+              longitude: position.longitude,
+              speed: position.speed
+            }
+            this.props.setProps({
+              position : geoPosition
+            })
+          }
+          } 
         />
       </div>
     )
@@ -37,14 +46,14 @@ class GeolocatorComponent extends Component {
 }
 
 GeolocatorComponent.defaultProps = {
-  setProps : () => {},
+  setProps: () => {},
   id: null,
   positionOptions: {
     enableHighAccuracy: true,
     maximumAge: 0,
     timeout: 5000,
   },
-  location : null,
+  position : null,
   watchPosition: true,
   userDecisionTimeout: null,
   suppressLocationOnMount: false,
@@ -58,7 +67,7 @@ GeolocatorComponent.defaultProps = {
 };
 
 GeolocatorComponent.propTypes = {
-  location : PropTypes.object,
+  position : PropTypes.object,
   setProps : PropTypes.func,
   id: PropTypes.string,
   positionOptions: PropTypes.object,
