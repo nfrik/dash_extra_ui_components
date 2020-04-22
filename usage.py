@@ -256,10 +256,6 @@ loadButton = html.Button(
     value='Load'
 )
 
-def newData():
-    print("??????????????????이럴수가??")
-    return func(*args, **kwargs)
-
 app.layout = html.Div(children=[
     ex.CaptchaDashUiComponents(
         id='captcha',
