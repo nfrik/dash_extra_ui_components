@@ -9,7 +9,8 @@ import {
     TreeDashUiComponents,
     WebcamDashUiComponents,
     MicrophoneDashUiComponents,
-    TrelloComponent
+    TrelloComponent,
+    GeolocatorComponent
 } from '../lib';
 import {carsCarousel} from './sampleData/carouselData';
 import orgSample from './sampleData/orgChartData';
@@ -296,6 +297,7 @@ class App extends Component {
 
         return (
             <div>
+                <GeolocatorComponent />
                 {/* <CarouselComponent
                     value={carsCarousel}
                     numVisible={4}
@@ -399,7 +401,7 @@ class App extends Component {
                     setProps={this.setProps}
                 /> */}
                 {/* <MicrophoneDashUiComponents/> */}
-                <TrelloComponent draggable = {true}/>
+                {/* <TrelloComponent draggable = {true}/> */}
             </div>
         );
     }

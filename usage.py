@@ -202,58 +202,58 @@ loadButton = html.Button(
     value='Load'
 )
 app.layout = html.Div(children=[
-    ex.CaptchaDashUiComponents(
-        id='captcha',
-        sitekey="6LelnsIUAAAAAN9KlJBir69dCnzeaapRdUQdiS0G",
-        # onResponse =
-        responsetext="initialize"
-    ),
-    html.H4("tree preview"),
-    ex.TreeDashUiComponents(
-        id='tree',
-        value=data
-    ),
-    html.H4('geolocator Preview'),
-    ex.GeolocatorComponent(
-        id='geolocator',
-    ),
-
-    html.Button('Geoloc Trigger',id='geoloc-trig'),
-    html.Div(id='geoloc-out'),
-
-    # ex.TrelloComponent(
-    #     draggable=True,
-    #     laneDraggable=True,
-    #     cardDraggable=True,
-    #     collapsibleLanes=True,
-    #     editable=True,
-    #     canAddLanes=True,
-    #     hideCardDeleteIcon=True,
-    #     editLaneTitle=True
+    # ex.CaptchaDashUiComponents(
+    #     id='captcha',
+    #     sitekey="6LelnsIUAAAAAN9KlJBir69dCnzeaapRdUQdiS0G",
+    #     # onResponse =
+    #     responsetext="initialize"
     # ),
-    html.Div(id='geolocator-output'),
+    # html.H4("tree preview"),
+    # ex.TreeDashUiComponents(
+    #     id='tree',
+    #     value=data
+    # ),
+    # html.H4('geolocator Preview'),
+    # ex.GeolocatorComponent(
+    #     id='geolocator',
+    # ),
 
-    html.H4('breadcrumbs Preview'),
-    ex.BreadcrumbsDashUiComponents(
-        id='breadcrumbs',
-        model=items,
-        home=home
-    ),
-    html.H4('Paginator Default Preview'),
+    # html.Button('Geoloc Trigger',id='geoloc-trig'),
+    # html.Div(id='geoloc-out'),
 
-    html.Div(id='output'),
-    html.Div(id='tree-output'),
-    html.Div(id='tree-output-select'),
-    html.H4('Datascroller inline Preview'),
-    html.Div([
-        ex.DataScrollerDashUiComponents(
-            value=carData['data'],
-            rows=10,
-            inline=True,
-            scrollHeight="500px",
-            header="Scroll Down to Load More"
-        )
-    ], className='content-section implementation'),
+    # # ex.TrelloComponent(
+    # #     draggable=True,
+    # #     laneDraggable=True,
+    # #     cardDraggable=True,
+    # #     collapsibleLanes=True,
+    # #     editable=True,
+    # #     canAddLanes=True,
+    # #     hideCardDeleteIcon=True,
+    # #     editLaneTitle=True
+    # # ),
+    # html.Div(id='geolocator-output'),
+
+    # html.H4('breadcrumbs Preview'),
+    # ex.BreadcrumbsDashUiComponents(
+    #     id='breadcrumbs',
+    #     model=items,
+    #     home=home
+    # ),
+    # html.H4('Paginator Default Preview'),
+
+    # html.Div(id='output'),
+    # html.Div(id='tree-output'),
+    # html.Div(id='tree-output-select'),
+    # html.H4('Datascroller inline Preview'),
+    # html.Div([
+    #     ex.DataScrollerDashUiComponents(
+    #         value=carData['data'],
+    #         rows=10,
+    #         inline=True,
+    #         scrollHeight="500px",
+    #         header="Scroll Down to Load More"
+    #     )
+    # ], className='content-section implementation'),
     # ex.OrganizationChartComponent(
     #     id='input2', # a unique identifier
     #     value=sample2, # required
@@ -291,55 +291,59 @@ app.layout = html.Div(children=[
     #     # className='', # css style
 
     # ),
-    ex.CarouselComponent(
-        id='input5',
-        value=cars_carousel,
-        numVisible=4,
-        numScroll=1,
-        className="custom-carousel",
-        header='customHeader',
-        # page={this.state.page},
-        # setProps={this.setProps},
-        # circular=True,
-        autoplayInterval=3000
+    ex.GeolocatorComponent(
+        id="Geolocator1"
     ),
-    html.Div(id='output0'),
-    html.Div(id='output2'),
-    html.Div(id='output5'),
+    html.Div(id='GeoOutput'),
+    # ex.CarouselComponent(
+    #     id='input5',
+    #     value=cars_carousel,
+    #     numVisible=4,
+    #     numScroll=1,
+    #     className="custom-carousel",
+    #     header='customHeader',
+    #     # page={this.state.page},
+    #     # setProps={this.setProps},
+    #     # circular=True,
+    #     autoplayInterval=3000
+    # ),
+    # html.Div(id='output0'),
+    # html.Div(id='output2'),
+    # html.Div(id='output5'),
 
-    html.H4('Paginator Default Preview'),
-    ex.PaginatorDashUiComponents(
-        id='paginator-default',
-        first=first,
-        rows=rows,
-        totalRecords=120,
-        rowsPerPageOptions=[10, 20, 30],
-    ),
-    html.H4('Paginator Custom Template Preview'),
-    ex.PaginatorDashUiComponents(
-        id='paginator-default1',
-        first=first,
-        rows=rows,
-        totalRecords=120,
-        rowsPerPageOptions=[10, 20, 30],
-        template="FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
-    ),
-    html.Div(id='output1'),
-    html.H4('Datascroller inline Preview'),
-    html.Div([
-        ex.DataScrollerDashUiComponents(
-            value=carData['data'],
-            rows=10,
-            inline=True,
-            scrollHeight="500px",
-            header="Scroll Down to Load More"
-        )
-    ], className='content-section implementation'),
-    html.H4('PDF Viewer Preview'),
-    ex.PDFViewerComponent(
-        url='https://arxiv.org/pdf/quant-ph/0410100.pdf',
-        navbarOnTop=True
-    )
+    # html.H4('Paginator Default Preview'),
+    # ex.PaginatorDashUiComponents(
+    #     id='paginator-default',
+    #     first=first,
+    #     rows=rows,
+    #     totalRecords=120,
+    #     rowsPerPageOptions=[10, 20, 30],
+    # ),
+    # html.H4('Paginator Custom Template Preview'),
+    # ex.PaginatorDashUiComponents(
+    #     id='paginator-default1',
+    #     first=first,
+    #     rows=rows,
+    #     totalRecords=120,
+    #     rowsPerPageOptions=[10, 20, 30],
+    #     template="FirstPageLink PrevPageLink CurrentPageReport NextPageLink LastPageLink"
+    # ),
+    # html.Div(id='output1'),
+    # html.H4('Datascroller inline Preview'),
+    # html.Div([
+    #     ex.DataScrollerDashUiComponents(
+    #         value=carData['data'],
+    #         rows=10,
+    #         inline=True,
+    #         scrollHeight="500px",
+    #         header="Scroll Down to Load More"
+    #     )
+    # ], className='content-section implementation'),
+    # html.H4('PDF Viewer Preview'),
+    # ex.PDFViewerComponent(
+    #     url='https://arxiv.org/pdf/quant-ph/0410100.pdf',
+    #     navbarOnTop=True
+    # )
 ])
 
 
@@ -348,62 +352,66 @@ app.layout = html.Div(children=[
 # def page_change(first, rows):
 #     return "asdf"
 
-
-@app.callback(Output('output', 'children'), [Input('tree', 'id'),
-                                             Input(
-                                                 'paginator-default', 'first'),
-                                             Input('paginator-default', 'rows'), ])
-def display_output(text, first, rows):
-    # check value
-    return 'First value is: {}, Rows value is {}'.format(first, rows)
-
-
-# @app.callback(Output('output0', 'children'), [Input('input3', 'value')])
-# def display_output0(selection):
-#     return 'You have selected {}'.format(selection)
-
-
-# @app.callback(Output('output1', 'children'), [Input('input4', 'value')])
-# def display_output1(selection):
-#     return 'Rating: {}'.format(selection)
-
-
-@app.callback(Output('output5', 'children'), [Input('input5', 'clicked')])
-def display_output5(selection):
-    icon = f"Clicked on: {selection['action'] if selection else 'None'} icon"
-    item = f"  of {selection['item'] if selection else 'None'} item"
-    return icon + item
-
-
-@app.callback(Output('output1', 'children'), [Input('paginator-default1', 'first'),
-                                              Input('paginator-default1', 'rows'), ])
-def display_output1(first, rows):
-    # check value
-    return 'First value is: {}, Rows value is {}'.format(first, rows)
-
-
-@app.callback(Output('tree-output', 'children'), [Input('tree', 'expandedKeys')])
-def tree_output(exKey):
-    return 'Tree expandedKeys: {}'.format(exKey)
-
-
-@app.callback(Output('tree-output-select', 'children'), [Input('tree', 'selectionKeys')])
-def tree_output1(selectionKeys):
-    return 'Tree selectionKeys: {}'.format(selectionKeys)
-
-
-# 'positionOptions', 'watchPosition', 'userDecisionTimeout', 'suppressLocationOnMount', 'isOptimisticGeolocationEnabled'
-@app.callback(Output('geoloc-out', 'children'),
-              [Input('geoloc-trig', 'n_clicks')],
-              [State('geolocator', 'coords'),
-               State('geolocator', 'positionOptions'),
-               State('geolocator', 'watchPosition'),
-               State('geolocator', 'userDecisionTimeout'),
-               State('geolocator', 'suppressLocationOnMount'),
-               State('geolocator', 'isOptimisticGeolocationEnabled')])
-def button_geoloc(n_clics, coords,posopts,watchpos,usrdec,suppress,isoptim):
+@app.callback(Output('GeoOutput', 'children'), [Input('Geolocator1','coords')])
+def getCurrentPosition(coords):
     print(coords)
-    return ''
+    return '{}'.format(coords)
+
+# @app.callback(Output('output', 'children'), [Input('tree', 'id'),
+#                                              Input(
+#                                                  'paginator-default', 'first'),
+#                                              Input('paginator-default', 'rows'), ])
+# def display_output(text, first, rows):
+#     # check value
+#     return 'First value is: {}, Rows value is {}'.format(first, rows)
+
+
+# # @app.callback(Output('output0', 'children'), [Input('input3', 'value')])
+# # def display_output0(selection):
+# #     return 'You have selected {}'.format(selection)
+
+
+# # @app.callback(Output('output1', 'children'), [Input('input4', 'value')])
+# # def display_output1(selection):
+# #     return 'Rating: {}'.format(selection)
+
+
+# @app.callback(Output('output5', 'children'), [Input('input5', 'clicked')])
+# def display_output5(selection):
+#     icon = f"Clicked on: {selection['action'] if selection else 'None'} icon"
+#     item = f"  of {selection['item'] if selection else 'None'} item"
+#     return icon + item
+
+
+# @app.callback(Output('output1', 'children'), [Input('paginator-default1', 'first'),
+#                                               Input('paginator-default1', 'rows'), ])
+# def display_output1(first, rows):
+#     # check value
+#     return 'First value is: {}, Rows value is {}'.format(first, rows)
+
+
+# @app.callback(Output('tree-output', 'children'), [Input('tree', 'expandedKeys')])
+# def tree_output(exKey):
+#     return 'Tree expandedKeys: {}'.format(exKey)
+
+
+# @app.callback(Output('tree-output-select', 'children'), [Input('tree', 'selectionKeys')])
+# def tree_output1(selectionKeys):
+#     return 'Tree selectionKeys: {}'.format(selectionKeys)
+
+
+# # 'positionOptions', 'watchPosition', 'userDecisionTimeout', 'suppressLocationOnMount', 'isOptimisticGeolocationEnabled'
+# @app.callback(Output('geoloc-out', 'children'),
+#               [Input('geoloc-trig', 'n_clicks')],
+#               [State('geolocator', 'coords'),
+#                State('geolocator', 'positionOptions'),
+#                State('geolocator', 'watchPosition'),
+#                State('geolocator', 'userDecisionTimeout'),
+#                State('geolocator', 'suppressLocationOnMount'),
+#                State('geolocator', 'isOptimisticGeolocationEnabled')])
+# def button_geoloc(n_clics, coords,posopts,watchpos,usrdec,suppress,isoptim):
+#     print(coords)
+#     return ''
 
 
 # @app.callback(Output('geolocator-output', 'children'), [Input('load-button', 'n_clicks')], [State('geolocator','geolocationProvider')])

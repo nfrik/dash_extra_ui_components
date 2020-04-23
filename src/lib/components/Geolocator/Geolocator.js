@@ -78,7 +78,6 @@ class Geolocator extends Component {
             } else {
               this.onPositionSuccess(crd);
             }          
-	     this.props.setProps({coords:crd})
           },
           (err) => {
             console.warn('ERROR(' + err.code + '): ' + err.message);
@@ -100,7 +99,7 @@ class Geolocator extends Component {
       isGeolocationEnabled: true,
       positionError: null,
     })
-
+    this.props.getPosition(position)
     this.props.onSuccess(position)
   }
 
