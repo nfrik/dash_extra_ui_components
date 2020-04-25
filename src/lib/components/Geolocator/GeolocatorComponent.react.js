@@ -11,7 +11,7 @@ class GeolocatorComponent extends Component {
   render() {
     return (
       <div id={this.props.id}>
-        <Geolocator 
+        <Geolocator
           positionOptions = {this.props.positionOptions}
           watchPosition = {this.props.watchPosition}
           userDecisionTimeout = {this.props.userDecisionTimeout}
