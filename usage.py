@@ -256,7 +256,10 @@ loadButton = html.Button(
     value='Load'
 )
 
+PMSData = [(3,2,4,5),(2,34,2,5)]
+
 app.layout = html.Div(children=[
+    ex.PMSComponent(value=PMSData),
     ex.GeolocatorComponent(
         id='geolocator',
     ),

@@ -1,0 +1,12 @@
+body {
+    background-color: black;
+}
+.item1:hover{
+    background: linear-gradient(to bottom, #999999 0%, #000000 100%) !important;
+    color : white !important;
+}
+.itemTitle {
+    background: linear-gradient(to bottom, #999999 0%, #000000 100%) !important;
+    color : white !important;
+    font-size: 30px !important;
+}

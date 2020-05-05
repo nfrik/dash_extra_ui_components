@@ -17,6 +17,7 @@ import PanelMenuComponent from './components/PanelMenu/PanelMenuComponent';
 import PDFViewerComponent from './components/PDFViewer/PDFViewerComponent.react';
 import GeolocatorComponent from './components/Geolocator/GeolocatorComponent.react';
 import TrelloComponent from './components/Trello/TrelloComponent';
+import PMSComponent from './components/PMS_Component/PMSComponent.react';
 
 
 export {
@@ -38,4 +39,5 @@ export {
     PDFViewerComponent,
     GeolocatorComponent,
     TrelloComponent,
+    PMSComponent,
 };

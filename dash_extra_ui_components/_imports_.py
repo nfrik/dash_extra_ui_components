@@ -19,6 +19,8 @@ from .MicrophoneDashUiComponents import MicrophoneDashUiComponents
 from .OrganizationChart import OrganizationChart
 from .OrganizationChartComponent import OrganizationChartComponent
 from .PDFViewerComponent import PDFViewerComponent
+from .PMSChildrenComponent import PMSChildrenComponent
+from .PMSComponent import PMSComponent
 from .CurrentPageReport import CurrentPageReport
 from .FirstPageLink import FirstPageLink
 from .LastPageLink import LastPageLink
@@ -59,6 +61,8 @@ __all__ = [
     "OrganizationChart",
     "OrganizationChartComponent",
     "PDFViewerComponent",
+    "PMSChildrenComponent",
+    "PMSComponent",
     "CurrentPageReport",
     "FirstPageLink",
     "LastPageLink",
