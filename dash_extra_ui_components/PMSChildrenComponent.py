@@ -8,14 +8,14 @@ class PMSChildrenComponent(Component):
 
 
 Keyword arguments:
-- value (list; optional)"""
+- data (list; optional)"""
     @_explicitize_args
-    def __init__(self, value=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['value']
+    def __init__(self, data=Component.UNDEFINED, girlDataUpdate=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['data']
         self._type = 'PMSChildrenComponent'
         self._namespace = 'dash_extra_ui_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['value']
+        self.available_properties = ['data']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

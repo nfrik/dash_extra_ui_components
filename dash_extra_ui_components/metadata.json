@@ -3636,9 +3636,36 @@
   "src/lib/components/PMS_Component/PMSChildrenComponent.js": {
     "description": "",
     "displayName": "PMSChildrenComponent",
-    "methods": [],
+    "methods": [
+      {
+        "name": "toggle",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "loadGirlData",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
-      "value": {
+      "data": {
         "type": {
           "name": "array"
         },
@@ -3648,6 +3675,13 @@
           "value": "[]",
           "computed": false
         }
+      },
+      "girlDataUpdate": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
       }
     }
   },
@@ -3656,12 +3690,60 @@
     "displayName": "PMSComponent",
     "methods": [
       {
+        "name": "submitHandler",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "handleChange",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "event",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
         "name": "getChild",
         "docblock": null,
         "modifiers": [],
         "params": [
           {
             "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "girlDataUpdate",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "result",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "toggle",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "nr",
             "type": null
           }
         ],
@@ -3690,6 +3772,35 @@
           "value": "null",
           "computed": false
         }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "newGirl": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "updateData": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
       }
     }
   },

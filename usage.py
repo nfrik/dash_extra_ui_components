@@ -256,7 +256,8 @@ loadButton = html.Button(
     value='Load'
 )
 
-PMSData = [(3,2,4,5),(2,34,2,5)]
+PMSData = '[{"girlName": "Anna", "startDate": "2020-04-25", "cycle": 30, "menstruation": 7, "ovulation": 14},{"girlName": "Olga", "startDate": "2020-04-28", "cycle": 28, "menstruation": 5, "ovulation": 13}]'
+
 
 app.layout = html.Div(children=[
     ex.PMSComponent(value=PMSData),

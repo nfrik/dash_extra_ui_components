@@ -1,8 +1,8 @@
 # AUTO GENERATED FILE - DO NOT EDIT
 
-pMSChildrenComponent <- function(value=NULL) {
+pMSChildrenComponent <- function(data=NULL, girlDataUpdate=NULL) {
     
-    props <- list(value=value)
+    props <- list(data=data, girlDataUpdate=girlDataUpdate)
     if (length(props) > 0) {
         props <- props[!vapply(props, is.null, logical(1))]
     }
@@ -10,7 +10,7 @@ pMSChildrenComponent <- function(value=NULL) {
         props = props,
         type = 'PMSChildrenComponent',
         namespace = 'dash_extra_ui_components',
-        propNames = c('value'),
+        propNames = c('data', 'girlDataUpdate'),
         package = 'dashExtraUiComponents'
         )
 

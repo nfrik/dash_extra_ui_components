@@ -4,45 +4,67 @@ import './PMSComponent.css';
 import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import PMSChildrenComponent from './PMSChildrenComponent';
-import {
-    MDBContainer,
-    MDBRow,
-    MDBCol,
-    MDBCard,
-    MDBCardBody,
-    MDBModalFooter,
-    MDBIcon,
-    MDBCardHeader,
-    MDBBtn,
-    MDBInput
-  } from "mdbreact";
+import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBModalFooter, MDBBtn, MDBModal, MDBModalHeader, MDBModalBody } from "mdbreact";
 import './PMSComponent.css'
+// import DatePicker from 'react-datepicker';
 
 export default class PMSComponent extends Component {
     constructor(props) {
         super(props);
+
         this.state = {
-            data : this.props.value,
-            childData : this.props.value[0]
+            girlName : "", 
+            cycle : "",
+            startDate : "",
+            obulation  : "",                                             
+            menstruation : "",
+            modal : false,
+            childData : JSON.parse(this.props.value)[0],
+            error : "" 
         }
+    }
+
+    submitHandler = event => {
+        event.preventDefault();
+        event.target.className += " was-validated";
+    }
+
+    handleChange = event => {
+        this.setState({ [event.target.name] : event.target.value });
     }
 
     getChild = e => {
         this.setState({
-            childData : this.state.data[e.target.value]
+            childData : JSON.parse(this.props.value)[e.target.value]
         })
-        debugger
     }
 
-    render() {
-        let girlData = this.props.value;
-        let girlList = []
-        for(let x in girlData){
-            girlList.push(
-                <li class="list-group-item list-group-item-action item1" value = { x } onClick = {this.getChild}>{ girlData[x][0] }</li>
-            )
-        }
+    girlDataUpdate = result => {
+        delete result.modal
+        this.props.setProps({
+            updateData : result
+        })
+    }
 
+    toggle = () => {
+        this.setState({
+          modal : !this.state.modal,
+          error : ""
+        });
+    }
+
+    render = () => {
+        if(JSON.parse(this.props.value).length > 0){
+            let girlData = JSON.parse(this.props.value)
+            var girlList = []
+            
+            for(let x in girlData){
+                girlList.push(
+                    <li class="list-group-item list-group-item-action item1" value = { x } onClick = {this.getChild}>{ girlData[x].girlName }</li>
+                )
+            }
+        }
+        debugger
         return (
             <MDBContainer id  = {this.props.id}>
                 <MDBRow className="justify-content-md-center">
@@ -50,16 +72,111 @@ export default class PMSComponent extends Component {
                         <div class="card card-cascade narrower">
                             <div class="card-body card-body-cascade" style = {{ padding : '0px', minHeight : '500px'}}>
                                 <div class="list-group">
-                                <li  class="itemTitle list-group-item list-group-item-action" >MyGirls</li>
+                                    <li  class="itemTitle list-group-item list-group-item-action" >MyGirls</li>
                                     { girlList }
+                                    <li class="list-group-item list-group-item-action addItem" 
+                                        onClick = {
+                                            this.toggle
+                                        }>
+                                        <i className = "fa fa-add"></i>
+                                        Add Gril
+                                    </li>
                                 </div>
                             </div>
                         </div>
                     </MDBCol>
                     <div style = {{'width' : '5px'}}></div>
                     <MDBCol md="9">
-                        <PMSChildrenComponent data = { this.state.childData } />
+                        <PMSChildrenComponent data = { this.state.childData } girlDataUpdate = { this.girlDataUpdate } />
                     </MDBCol>
+                </MDBRow>
+                <MDBRow>
+                    <MDBModal isOpen={this.state.modal} toggle={this.toggle} size = "md">
+                        <form action = {this.submitHandler}>
+                            <div className = "itemTitle">
+                                <MDBModalHeader  toggle={this.toggle}>Add Gril</MDBModalHeader>
+                            </div>
+                            <MDBModalBody>
+                                <div style = {{maxHeight : "680px"}}>
+                                    <div className = "row">
+                                        <div class ="col-lg-3 col-md-1">
+                                        </div>
+                                        <h5 style={{'color':'red'}}>{ this.state.error }</h5>
+                                    </div>
+                                    <div class = "row">
+                                        <div class ="col-lg-6 col-md-12">
+                                            <MDBInput label="Name : " 
+                                                onChange = { this.handleChange } 
+                                                name ="girlName" 
+                                                value = { this.state.girlName }/>
+                                        </div>
+                                        <div class ="col-lg-4 col-md-8">
+                                            <MDBInput 
+                                                label="Cycle" 
+                                                onChange = { this.handleChange } 
+                                                name = "cycle" 
+                                                value = { this.state.cycle}
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className = "row">
+                                        <div class = "col-lg-6 col-md-8">
+                                            <MDBInput 
+                                                label="Start Date" 
+                                                placeholde = "yyyy-mm-dd" 
+                                                onChange = { this.handleChange } 
+                                                name = "startDate" 
+                                                value = { this.state.startDate }
+                                            />
+                                        </div>
+                                        <div class = "col-lg-4 col-md-8">
+                                            <MDBInput label="Ovulstion Period" onChange = { this.handleChange } name = "obulation" value = { this.state.obulation }/>
+                                        </div> 
+                                    </div>
+                                    <div class = "row">
+                                        <div class = "col-lg-6 col-md-8">
+                                            <MDBInput label="Menstruation Period" onChange = { this.handleChange } name = "menstruation" value = {  this.state.menstruation }/>
+                                        </div>
+                                    </div>                       
+                                </div>
+                            </MDBModalBody>
+                            <MDBModalFooter>
+                                <MDBBtn className = "item1" onClick={this.toggle}>Cancel</MDBBtn>
+                                <MDBBtn className = "item1"
+                                    onClick = {() => {
+                                        let dateTrue = /([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/.test(this.state.startDate)
+                                        if(!dateTrue){
+                                            this.setState({
+                                                error : 'Date Type must be "yyyy-mm-dd" !'
+                                            })
+                                            return
+                                        }
+                                        
+                                        if(this.state.girlName != "" && this.state.cycle != "" && Number(this.state.cycle) != NaN 
+                                            && this.state.startDate != "" && Number(this.state.cycle) > 0
+                                            && this.state.obulation != "" && Number(this.state.obulation) != NaN && Number(this.state.obulation) > 0
+                                            && this.state.menstruation != "" && Number(this.state.menstruation) != NaN && Number(this.state.menstruation) > 0) {
+                                            let girlData = {
+                                                girlName : this.state.girlName,
+                                                cycle : Number(this.state.cycle),
+                                                obulation : Number(this.state.obulation),
+                                                menstruation : Number(this.state.menstruation)
+                                            }
+                                            this.props.setProps({
+                                                newGirl : girlData
+                                            })
+                                            this.toggle()
+                                        } else {
+                                            this.setState({
+                                                error : "Please Input Correctly!"
+                                            })
+                                            return
+                                        }
+                                    }}
+                                >Add Girl</MDBBtn>
+                            </MDBModalFooter>
+                        </form>
+                    </MDBModal>
                 </MDBRow>
             </MDBContainer>
         );
@@ -68,10 +185,15 @@ export default class PMSComponent extends Component {
 
 PMSComponent.defaultProps = {
    value : {},
-   id : null
+   id : null,
+   setProps : () => {},
+   newGirl : null
 };
 
 PMSComponent.propTypes = {
-    value : PropTypes.array,
-    id : PropTypes.string
+    value : PropTypes.string,
+    id : PropTypes.string,
+    setProps : PropTypes.func,
+    newGirl : PropTypes.object,
+    updateData : PropTypes.object
 };

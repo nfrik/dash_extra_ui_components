@@ -10,9 +10,11 @@
 }
 
 \usage{
-pMSChildrenComponent(value=NULL)
+pMSChildrenComponent(data=NULL, girlDataUpdate=NULL)
 }
 
 \arguments{
-\item{value}{Unnamed list. }
+\item{data}{Unnamed list. }
+
+\item{girlDataUpdate}{}
 }
