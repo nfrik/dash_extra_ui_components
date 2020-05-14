@@ -3667,16 +3667,34 @@
     "props": {
       "data": {
         "type": {
-          "name": "array"
+          "name": "object"
         },
         "required": false,
         "description": "",
         "defaultValue": {
-          "value": "[]",
+          "value": "{}",
           "computed": false
         }
       },
       "girlDataUpdate": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": ""
+      },
+      "range": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "21",
+          "computed": false
+        }
+      },
+      "delete": {
         "type": {
           "name": "func"
         },
@@ -3738,22 +3756,36 @@
         "returns": null
       },
       {
-        "name": "toggle",
+        "name": "delete",
         "docblock": null,
         "modifiers": [],
         "params": [
           {
-            "name": "nr",
+            "name": "result",
             "type": null
           }
         ],
+        "returns": null
+      },
+      {
+        "name": "toggle",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
+        "name": "render",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
         "returns": null
       }
     ],
     "props": {
       "value": {
         "type": {
-          "name": "array"
+          "name": "string"
         },
         "required": false,
         "description": "",
@@ -3798,6 +3830,24 @@
       "updateData": {
         "type": {
           "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "range": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "21",
+          "computed": false
+        }
+      },
+      "deleteID": {
+        "type": {
+          "name": "string"
         },
         "required": false,
         "description": ""

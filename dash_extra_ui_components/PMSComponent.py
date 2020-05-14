@@ -8,17 +8,19 @@ class PMSComponent(Component):
 
 
 Keyword arguments:
-- value (list; optional)
+- value (string; optional)
 - id (string; optional)
 - newGirl (dict; optional)
-- updateData (dict; optional)"""
+- updateData (dict; optional)
+- range (number; default 21)
+- deleteID (string; optional)"""
     @_explicitize_args
-    def __init__(self, value=Component.UNDEFINED, id=Component.UNDEFINED, newGirl=Component.UNDEFINED, updateData=Component.UNDEFINED, **kwargs):
-        self._prop_names = ['value', 'id', 'newGirl', 'updateData']
+    def __init__(self, value=Component.UNDEFINED, id=Component.UNDEFINED, newGirl=Component.UNDEFINED, updateData=Component.UNDEFINED, range=Component.UNDEFINED, deleteID=Component.UNDEFINED, **kwargs):
+        self._prop_names = ['value', 'id', 'newGirl', 'updateData', 'range', 'deleteID']
         self._type = 'PMSComponent'
         self._namespace = 'dash_extra_ui_components'
         self._valid_wildcard_attributes =            []
-        self.available_properties = ['value', 'id', 'newGirl', 'updateData']
+        self.available_properties = ['value', 'id', 'newGirl', 'updateData', 'range', 'deleteID']
         self.available_wildcard_properties =            []
 
         _explicit_args = kwargs.pop('_explicit_args')

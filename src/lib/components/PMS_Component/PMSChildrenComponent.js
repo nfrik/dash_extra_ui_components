@@ -12,6 +12,7 @@ export default class PMSChildrenComponent extends Component {
         super(props);
         this.state = ({
             modal1 : false,
+            id : this.props.data.id,
             girlName : "", 
             cycle : "",
             startDate : "",
@@ -28,6 +29,7 @@ export default class PMSChildrenComponent extends Component {
 
     loadGirlData = () => {
         this.setState({
+            id : this.props.data.id,
             girlName : this.props.data.girlName,
             cycle : this.props.data.cycle,
             startDate : this.props.data.startDate,
@@ -42,87 +44,10 @@ export default class PMSChildrenComponent extends Component {
     }
 
     render() {
-        var xaxis  = []
-        var pmsData = []
-        var Colors = []
         var CurrentDay = 0
-    
-        for( let i = 0; i < ( this.props.data.cycle - this.props.data.ovulation ); i++){
-            let date = new Date(this.props.data.startDate)
-            let current = new Date()
-            CurrentDay = Math.ceil(Number(current.getTime() - date.getTime()) / 86400000)
-            let milliDate = date.getTime() + 86400000 * (i + 1)
-            let newDate = new Date(milliDate)
-            let newDateString = "" + (newDate.getMonth()+1) + "-" + newDate.getDate()
-            xaxis.push(newDateString)
-        }
-
-        for( let j = 0; j < this.props.data.menstruation; j++ ) {
-            let step = 100/this.props.data.menstruation;
-            pmsData.push( Math.round(100 - j * step) )
-
-            let Colorstep = (255 - 50) / this.props.data.menstruation
-            let colorRed = Math.round( 255 - Colorstep * j )
-            console.log(colorRed)
-            debugger
-            colorRed = colorRed.toString(16)
-            Colors.push('#'+ colorRed+'0000')
-        }
-
-        for(let i = this.props.data.menstruation; i < (this.props.data.cycle- this.props.data.ovulation) - 5 ; i ++){
-            pmsData.push(0)
-            Colors.push('#FFFFFF')
-        }
-        
-        var fertility = 0
-        var colorGreen = 0
-        for (let i = this.props.data.ovulation - 5; i < this.props.data.ovulation ; i++){
-            fertility += 20;
-            pmsData.push(fertility)
-
-            let colorStep = Math.round(255 - 50) / 5;
-            colorGreen +=  Number(colorStep)
-            let colorGreenHex = colorGreen.toString(16)
-            Colors.push('#00' + colorGreenHex + '00')
-        }
-
-        console.log(pmsData)
-        console.log(xaxis)
-        console.log(Colors)
-        var chartData = {
-            tooltip: {
-                y: {
-                    formatter: (value) => { let yTooltip = value + "%"; return yTooltip },
-                },              
-            },
-            series: [{
-              name: '',
-              data: pmsData
-            }],
-            options: {
-                chart: { type: 'bar', height: 350 },
-                plotOptions: {
-                    bar: { horizontal: false, columnWidth: '98%', distributed : true,
-                        markers: {
-                            colors: ['#FF0000', '#D00000', '#0000', '#0000', '#550000']
-                        }
-                    },
-                },
-                dataLabels: { enabled: true },
-                xaxis: { categories: xaxis },
-                yaxis: {
-                    title: { text: '' }
-                },
-                fill: {
-                    colors : Colors,
-                },
-                legend: {
-                    markers: {
-                        fillColors: Colors,
-                    },
-                }
-            },
-        };
+        let date = new Date(this.props.data.startDate)
+        let current = new Date()
+        CurrentDay = Math.ceil(Number(current.getTime() - date.getTime()) / 86400000)
 
         return (
             <div class="card card-cascade narrower">
@@ -165,13 +90,22 @@ export default class PMSChildrenComponent extends Component {
                     </MDBRow>
                     <MDBRow className="justify-content-md-center">
                         <MDBCol md = "11">
-                            {this.props.data ? <Chart options={chartData.options} series={chartData.series} type="bar" height={350} /> :""}
+                            
                         </MDBCol>
-                    </MDBRow>
-                        <MDBCol md = "9"></MDBCol>
+                    </MDBRow >
+                    <MDBRow className="justify-content-md-center">
                         <MDBCol md = "3">
-                            <MDBBtn className="item1" onClick = {this.loadGirlData}> Update </MDBBtn>
+                            <MDBBtn className="item1" onClick = {() => this.props.delete(this.state.id) }> Delete </MDBBtn>
                         </MDBCol>
+                        <MDBCol md = "3">
+
+                        </MDBCol>
+                        <MDBCol md = "3">
+                            <MDBBtn className="item1" onClick = { this.loadGirlData }> Update </MDBBtn>
+                        </MDBCol>
+                        
+                    </MDBRow>
+
                     <MDBRow>
                         <MDBModal isOpen={this.state.modal1} toggle={this.toggle} size = "md">
                             <form>
@@ -208,7 +142,7 @@ export default class PMSChildrenComponent extends Component {
                                     <MDBBtn className = "item1" 
                                         onClick = {() => {
                                             this.toggle()
-                                            this.props.girlDataUpdate(this.state) 
+                                            this.props.girlDataUpdate(this.state)
                                         }} >
                                         UpDate
                                     </MDBBtn>
@@ -223,11 +157,14 @@ export default class PMSChildrenComponent extends Component {
 }
 
 PMSChildrenComponent.defaultProps = {
-    data : {}
+    data : {},
+    range : 21
  };
  
  PMSChildrenComponent.propTypes = {
      data : PropTypes.object,
-     girlDataUpdate : PropTypes.func
+     girlDataUpdate : PropTypes.func,
+     range : PropTypes.number,
+     delete : PropTypes.func,
  };
  

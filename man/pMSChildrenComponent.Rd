@@ -10,11 +10,15 @@
 }
 
 \usage{
-pMSChildrenComponent(data=NULL, girlDataUpdate=NULL)
+pMSChildrenComponent(data=NULL, girlDataUpdate=NULL, range=NULL, delete=NULL)
 }
 
 \arguments{
-\item{data}{Unnamed list. }
+\item{data}{Named list. }
 
 \item{girlDataUpdate}{}
+
+\item{range}{Numeric. }
+
+\item{delete}{}
 }

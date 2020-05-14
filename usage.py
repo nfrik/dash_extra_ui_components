@@ -256,11 +256,11 @@ loadButton = html.Button(
     value='Load'
 )
 
-PMSData = '[{"girlName": "Anna", "startDate": "2020-04-25", "cycle": 30, "menstruation": 7, "ovulation": 14},{"girlName": "Olga", "startDate": "2020-04-28", "cycle": 28, "menstruation": 5, "ovulation": 13}]'
+PMSData = '[{"id": 1, "girlName": "Anna", "startDate": "2020-04-25", "cycle": 30, "menstruation": 7, "ovulation": 14},{"id":2, "girlName": "Olga", "startDate": "2020-04-28", "cycle": 28, "menstruation": 5, "ovulation": 13}]'
 
 
 app.layout = html.Div(children=[
-    ex.PMSComponent(value=PMSData),
+    ex.PMSComponent(id = "pms", value=PMSData),
     ex.GeolocatorComponent(
         id='geolocator',
     ),
@@ -354,6 +354,8 @@ app.layout = html.Div(children=[
         editLaneTitle=True,
     ),
     html.Div(id='out'),
+    html.Div(id='getdeleteid'),
+    html.Div(id='getupdatedata'),
     html.H4('PDF Viewer Preview'),
     ex.PDFViewerComponent(
             url='https://arxiv.org/pdf/quant-ph/0410100.pdf',
@@ -371,7 +373,6 @@ app.layout = html.Div(children=[
                                          Input('Trello1','landId'),
                                          Input('Trello1', 'changedData')])
 def chageData(event, cardId, landId,changedData):
-    print(event, cardId, landId,changedData)
     return '{}'.format(event)
 
 @app.callback(Output('output', 'children'), [Input('tree', 'id'),
@@ -417,6 +418,19 @@ def tree_output(exKey):
 @app.callback(Output('tree-output-select', 'children'), [Input('tree', 'selectionKeys')])
 def tree_output1(selectionKeys):
     return 'Tree selectionKeys: {}'.format(selectionKeys)
+
+@app.callback(Output('getdeleteid', 'children'),
+            [Input('pms', 'deleteID'),
+            Input('pms', 'id')]
+            )
+def delete(deleteid, id):
+    print("----- deletedID  ------",deleteid, "--------   currentID   -----------", id)
+
+@app.callback(Output('getupdatedata', 'children'),
+            [Input('pms', 'updateData')]
+            )
+def getUpdateData(updateData):
+    print(updateData)        
 
 
 if __name__ == '__main__':
