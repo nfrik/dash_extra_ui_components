@@ -12,8 +12,9 @@ export default class PMSChildrenComponent extends Component {
         super(props);
         this.state = ({
             modal1 : false,
+            modal2: false,
             id : this.props.data.id,
-            girlName : "", 
+            girlName : "",
             cycle : "",
             startDate : "",
             ovulation  : "",                                             
@@ -24,6 +25,13 @@ export default class PMSChildrenComponent extends Component {
     toggle = () => {
         this.setState({
           modal1: !this.state.modal1
+        });
+    }
+
+    toggle1 = () => {
+        debugger
+        this.setState({
+            modal2: !this.state.modal2
         });
     }
 
@@ -88,20 +96,16 @@ export default class PMSChildrenComponent extends Component {
                             </div>
                         </MDBCol>
                     </MDBRow>
-                    <MDBRow className="justify-content-md-center">
-                        <MDBCol md = "11">
-                            
-                        </MDBCol>
-                    </MDBRow >
+                    <br/>
                     <MDBRow className="justify-content-md-center">
                         <MDBCol md = "3">
-                            <MDBBtn className="item1" onClick = {() => this.props.delete(this.state.id) }> Delete </MDBBtn>
+                            <button className="button" onClick = { this.toggle1 }> Delete </button>
                         </MDBCol>
                         <MDBCol md = "3">
 
                         </MDBCol>
                         <MDBCol md = "3">
-                            <MDBBtn className="item1" onClick = { this.loadGirlData }> Update </MDBBtn>
+                            <button className="button" onClick = { this.loadGirlData }> Update </button>
                         </MDBCol>
                         
                     </MDBRow>
@@ -110,7 +114,7 @@ export default class PMSChildrenComponent extends Component {
                         <MDBModal isOpen={this.state.modal1} toggle={this.toggle} size = "md">
                             <form>
                                 <div className = "itemTitle">
-                                    <MDBModalHeader  toggle={this.toggle}>Add Gril</MDBModalHeader>
+                                    <MDBModalHeader  toggle={this.toggle}>Add Girl</MDBModalHeader>
                                 </div>
                                 <MDBModalBody>
                                     <div style = {{maxHeight : "680px"}}>
@@ -138,14 +142,34 @@ export default class PMSChildrenComponent extends Component {
                                     </div>
                                 </MDBModalBody>
                                 <MDBModalFooter>
-                                    <MDBBtn className = "item1" onClick={ this.toggle }>Cancel</MDBBtn>
-                                    <MDBBtn className = "item1" 
+                                    <button className = "button" onClick={ this.toggle }>Cancel</button>
+                                    <button className = "button" 
                                         onClick = {() => {
                                             this.toggle()
                                             this.props.girlDataUpdate(this.state)
                                         }} >
                                         UpDate
-                                    </MDBBtn>
+                                    </button>
+                                </MDBModalFooter>
+                            </form>
+                        </MDBModal>
+                        <MDBModal isOpen={this.state.modal2} toggle={this.toggle1} size = "md">
+                            <form>
+                                <div className = "itemTitle">
+                                    <MDBModalHeader  toggle={this.toggle1}></MDBModalHeader>
+                                </div>
+                                <MDBModalBody>
+                                    <h2>Really want to Delete?</h2>
+                                </MDBModalBody>
+                                <MDBModalFooter>
+                                    <button className = "button" onClick={ this.toggle1 }>CANCLE</button>
+                                    <button className = "button" 
+                                        onClick = {() => {
+                                            this.toggle1()
+                                            this.props.delete(this.props.data.id)
+                                        }} >
+                                        OK
+                                    </button>
                                 </MDBModalFooter>
                             </form>
                         </MDBModal>

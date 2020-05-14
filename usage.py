@@ -421,10 +421,11 @@ def tree_output1(selectionKeys):
 
 @app.callback(Output('getdeleteid', 'children'),
             [Input('pms', 'deleteID'),
-            Input('pms', 'id')]
+            Input('pms', 'currentGirlId')]
             )
-def delete(deleteid, id):
-    print("----- deletedID  ------",deleteid, "--------   currentID   -----------", id)
+def delete(deleteID, currentGirlId):
+    print(deleteID)
+    print("----- deletedID  ------",currentGirlId)
 
 @app.callback(Output('getupdatedata', 'children'),
             [Input('pms', 'updateData')]

@@ -1,7 +1,7 @@
 body {
     background-color: black;
 }
-.item1:hover{
+.item1:hover {
     background: linear-gradient(to bottom, #999999 0%, #000000 100%) !important;
     color : white !important;
 }
@@ -9,4 +9,11 @@ body {
     background: linear-gradient(to bottom, #999999 0%, #000000 100%) !important;
     color : white !important;
     font-size: 30px !important;
+}
+.button {
+    background: linear-gradient(to bottom, #999999 0%, #000000 100%) !important;
+    color : white !important;
+}
+.button:hover {
+    background: linear-gradient(to top, #999999 0%, #000000 100%) !important;
 }

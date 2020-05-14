@@ -37,12 +37,14 @@ export default class PMSComponent extends Component {
         this.setState({
             childData : JSON.parse(this.props.value)[e.target.value]
         })
-        this.setProps({
-            id : JSON.parse(this.props.value)[e.target.value].id
+        this.props.setProps({
+            currentGirlId : JSON.parse(this.props.value)[e.target.value].id
         })
+        console.log("---- currentgirlid  -----", JSON.parse(this.props.value)[e.target.value].id)
     }
 
     girlDataUpdate = result => {
+        debugger
         delete result.modal1
         this.props.setProps({
             updateData : result
@@ -50,6 +52,7 @@ export default class PMSComponent extends Component {
     }
 
     delete = (result) =>{
+        debugger
         this.props.setProps({
             deleteID : result
         })
@@ -73,7 +76,6 @@ export default class PMSComponent extends Component {
                 )
             }
         }
-        debugger
         return (
             <MDBRow id  = {this.props.id}>
                 <MDBCol md = "2">
@@ -218,5 +220,6 @@ PMSComponent.propTypes = {
     newGirl : PropTypes.object,
     updateData : PropTypes.object,
     range : PropTypes.number,
-    deleteID : PropTypes.string
+    currentGirlId : PropTypes.number,
+    deleteID : PropTypes.number,
 };

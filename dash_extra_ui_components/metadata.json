@@ -3645,6 +3645,13 @@
         "returns": null
       },
       {
+        "name": "toggle1",
+        "docblock": null,
+        "modifiers": [],
+        "params": [],
+        "returns": null
+      },
+      {
         "name": "loadGirlData",
         "docblock": null,
         "modifiers": [],
@@ -3845,9 +3852,16 @@
           "computed": false
         }
       },
+      "currentGirlId": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
       "deleteID": {
         "type": {
-          "name": "string"
+          "name": "number"
         },
         "required": false,
         "description": ""

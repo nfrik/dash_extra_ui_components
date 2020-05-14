@@ -10,7 +10,8 @@
 }
 
 \usage{
-pMSComponent(value=NULL, id=NULL, newGirl=NULL, updateData=NULL, range=NULL, deleteID=NULL)
+pMSComponent(value=NULL, id=NULL, newGirl=NULL, updateData=NULL, range=NULL,
+currentGirlId=NULL, deleteID=NULL)
 }
 
 \arguments{
@@ -24,5 +25,7 @@ pMSComponent(value=NULL, id=NULL, newGirl=NULL, updateData=NULL, range=NULL, del
 
 \item{range}{Numeric. }
 
-\item{deleteID}{Character. }
+\item{currentGirlId}{Numeric. }
+
+\item{deleteID}{Numeric. }
 }
