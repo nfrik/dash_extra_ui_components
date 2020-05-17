@@ -431,7 +431,7 @@ def delete(deleteID, currentGirlId):
             [Input('pms', 'updateData')]
             )
 def getUpdateData(updateData):
-    print(updateData)        
+    print('---------updateDate------', updateData)        
 
 
 if __name__ == '__main__':

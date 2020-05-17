@@ -3669,6 +3669,18 @@
           }
         ],
         "returns": null
+      },
+      {
+        "name": "handleChange1",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "date",
+            "type": null
+          }
+        ],
+        "returns": null
       }
     ],
     "props": {
@@ -3715,7 +3727,7 @@
     "displayName": "PMSComponent",
     "methods": [
       {
-        "name": "submitHandler",
+        "name": "handleChange",
         "docblock": null,
         "modifiers": [],
         "params": [
@@ -3727,12 +3739,12 @@
         "returns": null
       },
       {
-        "name": "handleChange",
+        "name": "handleChange1",
         "docblock": null,
         "modifiers": [],
         "params": [
           {
-            "name": "event",
+            "name": "date",
             "type": null
           }
         ],

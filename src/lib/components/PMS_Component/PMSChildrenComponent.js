@@ -4,8 +4,8 @@ import 'bootstrap-css-only/css/bootstrap.min.css';
 import 'mdbreact/dist/css/mdb.css';
 import './PMSComponent.css'
 import { MDBContainer, MDBRow, MDBCol, MDBInput, MDBModalFooter, MDBBtn, MDBModal, MDBModalHeader, MDBModalBody } from "mdbreact";
-
-import Chart from 'react-apexcharts'
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 
 export default class PMSChildrenComponent extends Component {
     constructor(props) {
@@ -16,10 +16,11 @@ export default class PMSChildrenComponent extends Component {
             id : this.props.data.id,
             girlName : "",
             cycle : "",
-            startDate : "",
-            ovulation  : "",                                             
+            startDate : new Date(),
+            ovulation  : "",
             menstruation : "",
         })
+        debugger
     }
 
     toggle = () => {
@@ -29,18 +30,18 @@ export default class PMSChildrenComponent extends Component {
     }
 
     toggle1 = () => {
-        debugger
         this.setState({
             modal2: !this.state.modal2
         });
     }
 
     loadGirlData = () => {
+        let startDate = new Date(this.props.data.startDate)
         this.setState({
             id : this.props.data.id,
             girlName : this.props.data.girlName,
             cycle : this.props.data.cycle,
-            startDate : this.props.data.startDate,
+            startDate : startDate,
             ovulation  : this.props.data.ovulation,                                             
             menstruation : this.props.data.menstruation,
         })
@@ -51,12 +52,18 @@ export default class PMSChildrenComponent extends Component {
         this.setState({ [event.target.name] : event.target.value });
     }
 
+    handleChange1 = date => {
+        this.setState({
+            startDate : date
+        })
+    }
+
     render() {
         var CurrentDay = 0
         let date = new Date(this.props.data.startDate)
         let current = new Date()
         CurrentDay = Math.ceil(Number(current.getTime() - date.getTime()) / 86400000)
-
+        debugger
         return (
             <div class="card card-cascade narrower">
                 <div class="card-body card-body-cascade">
@@ -97,7 +104,8 @@ export default class PMSChildrenComponent extends Component {
                         </MDBCol>
                     </MDBRow>
                     <br/>
-                    <MDBRow className="justify-content-md-center">
+                    { this.props.data.girlName == "" ? <div></div>:
+                     <MDBRow className="justify-content-md-center">
                         <MDBCol md = "3">
                             <button className="button" onClick = { this.toggle1 }> Delete </button>
                         </MDBCol>
@@ -106,29 +114,31 @@ export default class PMSChildrenComponent extends Component {
                         </MDBCol>
                         <MDBCol md = "3">
                             <button className="button" onClick = { this.loadGirlData }> Update </button>
-                        </MDBCol>
-                        
+                        </MDBCol>      
                     </MDBRow>
-
+                    } 
                     <MDBRow>
                         <MDBModal isOpen={this.state.modal1} toggle={this.toggle} size = "md">
-                            <form>
                                 <div className = "itemTitle">
-                                    <MDBModalHeader  toggle={this.toggle}>Add Girl</MDBModalHeader>
+                                    <MDBModalHeader  toggle={this.toggle}>Update Girl</MDBModalHeader>
                                 </div>
                                 <MDBModalBody>
-                                    <div style = {{maxHeight : "680px"}}>
+                                    <div>
                                         <div class = "row">
-                                            <div class ="col-lg-6 col-md-12">
+                                            <div class ="col-lg-4 col-md-12">
                                                 <MDBInput label="Name : " onChange = { this.handleChange } name ="girlName" value = { this.state.girlName }/>
                                             </div>
-                                            <div class ="col-lg-4 col-md-8">
-                                                <MDBInput label="Cycle" onChange = { this.handleChange } name = "cycle" value = { this.state.cycle }/>
+                                            <div class ="col-lg-8 col-md-12">
+                                                <label class="dateLabel">startDate</label><br/>
+                                                <DatePicker className = "datePicker"
+                                                    selected={this.state.startDate}
+                                                    onChange={this.handleChange1}
+                                                />
                                             </div>
                                         </div>
                                         <div className = "row">
                                             <div class = "col-lg-6 col-md-8">
-                                                <MDBInput label="Start Date" placeholde = "yyyy-mm-dd" onChange = { this.handleChange } name = "startDate" value = { this.state.startDate }/>
+                                                <MDBInput label="Cycle" onChange = { this.handleChange } name = "cycle" value = { this.state.cycle }/>
                                             </div>
                                             <div class = "col-lg-4 col-md-8">
                                                 <MDBInput label="Ovulstion Period" onChange = { this.handleChange } name = "ovulation" value = { this.state.ovulation }/>
@@ -147,14 +157,13 @@ export default class PMSChildrenComponent extends Component {
                                         onClick = {() => {
                                             this.toggle()
                                             this.props.girlDataUpdate(this.state)
+                                            debugger
                                         }} >
                                         UpDate
                                     </button>
                                 </MDBModalFooter>
-                            </form>
                         </MDBModal>
                         <MDBModal isOpen={this.state.modal2} toggle={this.toggle1} size = "md">
-                            <form>
                                 <div className = "itemTitle">
                                     <MDBModalHeader  toggle={this.toggle1}></MDBModalHeader>
                                 </div>
@@ -167,11 +176,11 @@ export default class PMSChildrenComponent extends Component {
                                         onClick = {() => {
                                             this.toggle1()
                                             this.props.delete(this.props.data.id)
+                                            
                                         }} >
                                         OK
                                     </button>
                                 </MDBModalFooter>
-                            </form>
                         </MDBModal>
                     </MDBRow>
                 </div>
