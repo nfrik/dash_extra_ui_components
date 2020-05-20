@@ -1301,6 +1301,82 @@
       }
     }
   },
+  "src/lib/components/GPayButtonComponent/GPayButtonComponent.js": {
+    "description": "",
+    "displayName": "GPayButtonComponent",
+    "methods": [],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "totalPrice": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'14.00'",
+          "computed": false
+        }
+      },
+      "totalPriceStatus": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'FINAL'",
+          "computed": false
+        }
+      },
+      "currencyCode": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'GBP'",
+          "computed": false
+        }
+      },
+      "countryCode": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'GB'",
+          "computed": false
+        }
+      },
+      "merchantInfo": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "paymentMethods": {
+        "type": {
+          "name": "array"
+        },
+        "required": false,
+        "description": ""
+      }
+    }
+  },
   "src/lib/components/Geolocator/Geolocator.js": {
     "description": "",
     "displayName": "Geolocator",

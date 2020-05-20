@@ -9,7 +9,6 @@ import {
     TreeDashUiComponents,
     WebcamDashUiComponents,
     MicrophoneDashUiComponents,
-    TrelloComponent
 } from '../lib';
 import {carsCarousel} from './sampleData/carouselData';
 import orgSample from './sampleData/orgChartData';
@@ -399,7 +398,6 @@ class App extends Component {
                     setProps={this.setProps}
                 /> */}
                 {/* <MicrophoneDashUiComponents/> */}
-                <TrelloComponent draggable = {true}/>
             </div>
         );
     }

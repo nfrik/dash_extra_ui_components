@@ -260,7 +260,7 @@ PMSData = '[{"id": 1, "girlName": "Anna", "startDate": "2020-04-25", "cycle": 30
 
 
 app.layout = html.Div(children=[
-    ex.PMSComponent(id = "pms", value=PMSData),
+    ex.GPayButtonComponent(id="Gp"),
     ex.GeolocatorComponent(
         id='geolocator',
     ),

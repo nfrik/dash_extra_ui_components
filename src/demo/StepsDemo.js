@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {StepsComponent, MenuBarComponent, PanelMenuComponent, PMSComponent} from '../lib';
-
+import {StepsComponent, MenuBarComponent, PanelMenuComponent, GPayButtonComponent, PMSComponent} from '../lib';
+import GPayButton from 'react-google-pay-button';
 class StepsDemo extends Component {
     constructor(props) {
         super(props);
@@ -8,10 +8,17 @@ class StepsDemo extends Component {
     }
     
     render() {
-        const value = '[{"id":1,"girlName": "Anna", "startDate": "2020-04-25", "cycle": 30, "menstruation": 7, "ovulation": 14},{"id":2, "girlName": "Olga", "startDate": "2020-04-28", "cycle": 28, "menstruation": 5, "ovulation": 13}]'
         return (
             <div>
-                <PMSComponent value = { value }/>
+                <h3>Hello</h3>
+                {/* <GPayButton
+                    totalPriceStatus={'FINAL'}
+                    totalPrice={'14.45'}
+                    currencyCode={'GBP'}
+                    countryCode={'GB'}
+                    development={true}
+                /> */}
+                <GPayButtonComponent />
             </div>
         );
     }

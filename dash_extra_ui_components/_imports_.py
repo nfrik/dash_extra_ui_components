@@ -4,6 +4,7 @@ from .CaptchaDashUiComponents import CaptchaDashUiComponents
 from .Carousel import Carousel
 from .CarouselComponent import CarouselComponent
 from .DataScrollerDashUiComponents import DataScrollerDashUiComponents
+from .GPayButtonComponent import GPayButtonComponent
 from .Geolocator import Geolocator
 from .GeolocatorComponent import GeolocatorComponent
 from .GeolocatorDashUiComponents import GeolocatorDashUiComponents
@@ -46,6 +47,7 @@ __all__ = [
     "Carousel",
     "CarouselComponent",
     "DataScrollerDashUiComponents",
+    "GPayButtonComponent",
     "Geolocator",
     "GeolocatorComponent",
     "GeolocatorDashUiComponents",
