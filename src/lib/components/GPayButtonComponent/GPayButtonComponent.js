@@ -114,9 +114,9 @@ GPayButtonComponent.defaultProps={
   apiVersion : 2,
   setProps : () => {},
   merchantInfo : {
-    merchantName: '<YOUR MERCHANT NAME>',
+    merchantName: 'Emample merchantName',
     // A Google merchant identifier issued after your website is approved by Google ✅
-    merchantId: 'AR-UcSCI_GrzS0Xodf3oUAinZwIylhqdOImtBtfUBZUMtwptW_dn3R1zwzdP1JVvmuOQmtU8I4wESLk'
+    merchantId: '01234567890123456789'
   },
   paymentMethods : [
     {
@@ -140,7 +140,7 @@ GPayButtonComponent.defaultProps={
         'purchase_context': {
           'purchase_units': [{
             'payee': {
-              'merchant_id': 'AR-UcSCI_GrzS0Xodf3oUAinZwIylhqdOImtBtfUBZUMtwptW_dn3R1zwzdP1JVvmuOQmtU8I4wESLk'
+              'merchant_id': 'AR-UcSCI_GrzS0Xodf3oUAinZwIylhqdOImtBtfUBZUMtwptW_dn3R1zwzdP1JVvmuOQmtU8I4wESLkl'
             }
           }]
         }
