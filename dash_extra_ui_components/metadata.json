@@ -1304,7 +1304,56 @@
   "src/lib/components/GPayButtonComponent/GPayButtonComponent.js": {
     "description": "",
     "displayName": "GPayButtonComponent",
-    "methods": [],
+    "methods": [
+      {
+        "name": "userCanceledHandle",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "userCancelData",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onLoadPaymentData",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "loadPaymentData",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onPaymentDataChanged",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "intermediatePaymentData",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onPaymentAuthorized",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "paymentData",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
     "props": {
       "id": {
         "type": {
@@ -1346,7 +1395,7 @@
         "required": false,
         "description": "",
         "defaultValue": {
-          "value": "'GBP'",
+          "value": "'USD'",
           "computed": false
         }
       },
@@ -1357,7 +1406,7 @@
         "required": false,
         "description": "",
         "defaultValue": {
-          "value": "'GB'",
+          "value": "'US'",
           "computed": false
         }
       },
@@ -1366,11 +1415,146 @@
           "name": "object"
         },
         "required": false,
-        "description": ""
+        "description": "",
+        "defaultValue": {
+          "value": "{\n  merchantName: '<YOUR MERCHANT NAME>',\n  // A Google merchant identifier issued after your website is approved by Google \u2705\n  merchantId: 'AR-UcSCI_GrzS0Xodf3oUAinZwIylhqdOImtBtfUBZUMtwptW_dn3R1zwzdP1JVvmuOQmtU8I4wESLk'\n}",
+          "computed": false
+        }
       },
       "paymentMethods": {
         "type": {
           "name": "array"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "[\n  {\n    type: 'CARD',\n    parameters: {\n      allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],\n      allowedCardNetworks: ['AMEX', 'DISCOVER', 'INTERAC', 'JCB', 'MASTERCARD', 'VISA']\n    },\n    tokenizationSpecification: {\n      type: 'PAYMENT_GATEWAY',\n      parameters: {\n        'gateway': 'stripe',\n        'stripe:version': '2019-03-14',\n        'stripe:publishableKey': '<YOUR_PUBLIC_STRIPE_KEY>'\n      }\n    }\n  },\n  {\n    type: 'PAYPAL',\n    parameters: {\n      'purchase_context': {\n        'purchase_units': [{\n          'payee': {\n            'merchant_id': 'AR-UcSCI_GrzS0Xodf3oUAinZwIylhqdOImtBtfUBZUMtwptW_dn3R1zwzdP1JVvmuOQmtU8I4wESLk'\n          }\n        }]\n      }\n    },\n    tokenizationSpecification: {\n      type: 'DIRECT'\n    }\n  }\n]",
+          "computed": false
+        }
+      },
+      "className": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "style": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "color": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'black'",
+          "computed": false
+        }
+      },
+      "type": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'long'",
+          "computed": false
+        }
+      },
+      "apiVersion": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "2",
+          "computed": false
+        }
+      },
+      "apiVersionMinor": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "0",
+          "computed": false
+        }
+      },
+      "checkoutOption": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "'DEFAULT'",
+          "computed": false
+        }
+      },
+      "development": {
+        "type": {
+          "name": "bool"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "true",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "changedPaymentData": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "userCancelData": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "loadPaymentData": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": ""
+      },
+      "paymentAuthorized": {
+        "type": {
+          "name": "object"
         },
         "required": false,
         "description": ""

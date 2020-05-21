@@ -260,7 +260,8 @@ PMSData = '[{"id": 1, "girlName": "Anna", "startDate": "2020-04-25", "cycle": 30
 
 
 app.layout = html.Div(children=[
-    ex.GPayButtonComponent(id="Gp", totalPrice='14.45'),
+    ex.GPayButtonComponent(id="Gp", development=True),
+    html.Div(id="GpOut"),
     ex.GeolocatorComponent(
         id='geolocator',
     ),
@@ -414,24 +415,15 @@ def tree_output(exKey):
 # def onCardClick(onCardClick):
 #     print("-----------", onCardClick)
     
+@app.callback(Output('GpOut', 'children'),
+                    [Input('Gp', "userCancelData")]
+                    )
+def getCancelData(userCancelData):
+    print(userCancelData)
 
 @app.callback(Output('tree-output-select', 'children'), [Input('tree', 'selectionKeys')])
 def tree_output1(selectionKeys):
     return 'Tree selectionKeys: {}'.format(selectionKeys)
-
-@app.callback(Output('getdeleteid', 'children'),
-            [Input('pms', 'deleteID'),
-            Input('pms', 'currentGirlId')]
-            )
-def delete(deleteID, currentGirlId):
-    print(deleteID)
-    print("----- deletedID  ------",currentGirlId)
-
-@app.callback(Output('getupdatedata', 'children'),
-            [Input('pms', 'updateData')]
-            )
-def getUpdateData(updateData):
-    print('---------updateDate------', updateData)        
 
 
 if __name__ == '__main__':

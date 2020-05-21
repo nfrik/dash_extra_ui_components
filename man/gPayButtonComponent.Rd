@@ -11,7 +11,10 @@
 
 \usage{
 gPayButtonComponent(id=NULL, totalPrice=NULL, totalPriceStatus=NULL, currencyCode=NULL,
-countryCode=NULL, merchantInfo=NULL, paymentMethods=NULL)
+countryCode=NULL, merchantInfo=NULL, paymentMethods=NULL, className=NULL,
+style=NULL, color=NULL, type=NULL, apiVersion=NULL, apiVersionMinor=NULL,
+checkoutOption=NULL, development=NULL, changedPaymentData=NULL,
+userCancelData=NULL, loadPaymentData=NULL, paymentAuthorized=NULL)
 }
 
 \arguments{
@@ -28,4 +31,28 @@ countryCode=NULL, merchantInfo=NULL, paymentMethods=NULL)
 \item{merchantInfo}{Named list. }
 
 \item{paymentMethods}{Unnamed list. }
+
+\item{className}{Character. }
+
+\item{style}{Named list. }
+
+\item{color}{Character. }
+
+\item{type}{Character. }
+
+\item{apiVersion}{Numeric. }
+
+\item{apiVersionMinor}{Numeric. }
+
+\item{checkoutOption}{Character. }
+
+\item{development}{Logical. }
+
+\item{changedPaymentData}{Named list. }
+
+\item{userCancelData}{Named list. }
+
+\item{loadPaymentData}{Named list. }
+
+\item{paymentAuthorized}{Named list. }
 }
