@@ -10,8 +10,9 @@ Organization Chart
 }
 
 \usage{
-organizationChart(id=NULL, value=NULL, style=NULL, className=NULL, selectionMode=NULL,
-selection=NULL, nodeTemplate=NULL, onSelectionChange=NULL, onNodeSelect=NULL,
+organizationChart(id=NULL, value=NULL, style=NULL, className=NULL,
+selectionMode=NULL, selection=NULL, nodeTemplate=NULL,
+onSelectionChange=NULL, onNodeSelect=NULL,
 onNodeUnselect=NULL)
 }
 
@@ -36,3 +37,6 @@ onNodeUnselect=NULL)
 
 \item{onNodeUnselect}{Callback to invoke when a node is selected.}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

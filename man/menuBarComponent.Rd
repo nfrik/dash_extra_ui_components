@@ -10,9 +10,10 @@ MenuBarComponent
 }
 
 \usage{
-menuBarComponent(id=NULL, model=NULL, style=NULL, inputPlaceholder=NULL, btnicon=NULL,
-btnlabel=NULL, className=NULL, menubarItem=NULL, submenubarItem=NULL,
-inputTextBox=NULL, button=NULL, searchQuery=NULL, menubarInput=NULL,
+menuBarComponent(id=NULL, model=NULL, style=NULL, inputPlaceholder=NULL,
+btnicon=NULL, btnlabel=NULL, className=NULL,
+menubarItem=NULL, submenubarItem=NULL, inputTextBox=NULL,
+button=NULL, searchQuery=NULL, menubarInput=NULL,
 btnClick=NULL)
 }
 
@@ -45,3 +46,6 @@ btnClick=NULL)
 
 \item{btnClick}{Character. }
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

@@ -10,8 +10,9 @@ Rating component Displays rating
 }
 
 \usage{
-rating(id=NULL, value=NULL, disabled=NULL, readonly=NULL, stars=NULL, cancel=NULL,
-style=NULL, className=NULL, tooltip=NULL, tooltipOptions=NULL, onChange=NULL)
+rating(id=NULL, value=NULL, disabled=NULL, readonly=NULL,
+stars=NULL, cancel=NULL, style=NULL, className=NULL,
+tooltip=NULL, tooltipOptions=NULL, onChange=NULL)
 }
 
 \arguments{
@@ -37,3 +38,6 @@ style=NULL, className=NULL, tooltip=NULL, tooltipOptions=NULL, onChange=NULL)
 
 \item{onChange}{Callback to invoke on value change.}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

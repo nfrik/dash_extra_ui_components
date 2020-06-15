@@ -1417,7 +1417,7 @@
         "required": false,
         "description": "",
         "defaultValue": {
-          "value": "{\n  merchantName: '<YOUR MERCHANT NAME>',\n  // A Google merchant identifier issued after your website is approved by Google \u2705\n  merchantId: 'AR-UcSCI_GrzS0Xodf3oUAinZwIylhqdOImtBtfUBZUMtwptW_dn3R1zwzdP1JVvmuOQmtU8I4wESLk'\n}",
+          "value": "{\n  merchantName: 'Emample merchantName',\n  // A Google merchant identifier issued after your website is approved by Google \u2705\n  merchantId: '01234567890123456789'\n}",
           "computed": false
         }
       },
@@ -1428,7 +1428,7 @@
         "required": false,
         "description": "",
         "defaultValue": {
-          "value": "[\n  {\n    type: 'CARD',\n    parameters: {\n      allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],\n      allowedCardNetworks: ['AMEX', 'DISCOVER', 'INTERAC', 'JCB', 'MASTERCARD', 'VISA']\n    },\n    tokenizationSpecification: {\n      type: 'PAYMENT_GATEWAY',\n      parameters: {\n        'gateway': 'stripe',\n        'stripe:version': '2019-03-14',\n        'stripe:publishableKey': '<YOUR_PUBLIC_STRIPE_KEY>'\n      }\n    }\n  },\n  {\n    type: 'PAYPAL',\n    parameters: {\n      'purchase_context': {\n        'purchase_units': [{\n          'payee': {\n            'merchant_id': 'AR-UcSCI_GrzS0Xodf3oUAinZwIylhqdOImtBtfUBZUMtwptW_dn3R1zwzdP1JVvmuOQmtU8I4wESLk'\n          }\n        }]\n      }\n    },\n    tokenizationSpecification: {\n      type: 'DIRECT'\n    }\n  }\n]",
+          "value": "[\n  {\n    type: 'CARD',\n    parameters: {\n      allowedAuthMethods: ['PAN_ONLY', 'CRYPTOGRAM_3DS'],\n      allowedCardNetworks: ['AMEX', 'DISCOVER', 'INTERAC', 'JCB', 'MASTERCARD', 'VISA']\n    },\n    tokenizationSpecification: {\n      type: 'PAYMENT_GATEWAY',\n      parameters: {\n        'gateway': 'stripe',\n        'stripe:version': '2019-03-14',\n        'stripe:publishableKey': '<YOUR_PUBLIC_STRIPE_KEY>'\n      }\n    }\n  },\n  {\n    type: 'PAYPAL',\n    parameters: {\n      'purchase_context': {\n        'purchase_units': [{\n          'payee': {\n            'merchant_id': 'AR-UcSCI_GrzS0Xodf3oUAinZwIylhqdOImtBtfUBZUMtwptW_dn3R1zwzdP1JVvmuOQmtU8I4wESLkl'\n          }\n        }]\n      }\n    },\n    tokenizationSpecification: {\n      type: 'DIRECT'\n    }\n  }\n]",
           "computed": false
         }
       },
@@ -1870,6 +1870,214 @@
           "value": "null",
           "computed": false
         }
+      }
+    }
+  },
+  "src/lib/components/IdleTimerComponent/IdleTimerComponent.js": {
+    "description": "",
+    "displayName": "IdleTimerComponent",
+    "methods": [
+      {
+        "name": "onAction",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onActive",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      },
+      {
+        "name": "onIdle",
+        "docblock": null,
+        "modifiers": [],
+        "params": [
+          {
+            "name": "e",
+            "type": null
+          }
+        ],
+        "returns": null
+      }
+    ],
+    "props": {
+      "id": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "timeout": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "3000",
+          "computed": false
+        }
+      },
+      "setProps": {
+        "type": {
+          "name": "func"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "() => {}",
+          "computed": false
+        }
+      },
+      "action": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "idle": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "active": {
+        "type": {
+          "name": "object"
+        },
+        "required": false,
+        "description": "",
+        "defaultValue": {
+          "value": "null",
+          "computed": false
+        }
+      },
+      "acType": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "xPosition": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "yPosition": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "movementX": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "movementY": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "pageX": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "pageY": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "screenX": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "screenY": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "timeStamp": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
+      },
+      "type": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "code": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "key": {
+        "type": {
+          "name": "string"
+        },
+        "required": false,
+        "description": ""
+      },
+      "which": {
+        "type": {
+          "name": "number"
+        },
+        "required": false,
+        "description": ""
       }
     }
   },

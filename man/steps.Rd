@@ -10,8 +10,8 @@ Steps
 }
 
 \usage{
-steps(id=NULL, model=NULL, activeIndex=NULL, readOnly=NULL, style=NULL,
-className=NULL, onSelect=NULL)
+steps(id=NULL, model=NULL, activeIndex=NULL, readOnly=NULL,
+style=NULL, className=NULL, onSelect=NULL)
 }
 
 \arguments{
@@ -29,3 +29,6 @@ className=NULL, onSelect=NULL)
 
 \item{onSelect}{Callback to invoke when the new step is selected.}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

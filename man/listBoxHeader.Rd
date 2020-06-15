@@ -20,3 +20,6 @@ listBoxHeader(filter=NULL, disabled=NULL, onFilter=NULL)
 
 \item{onFilter}{Callback to invoke when value of filter list changes}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

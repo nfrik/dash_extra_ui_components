@@ -24,3 +24,6 @@ breadcrumbsDashUiComponents(id=NULL, model=NULL, home=NULL, style=NULL, classNam
 
 \item{className}{Character. }
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

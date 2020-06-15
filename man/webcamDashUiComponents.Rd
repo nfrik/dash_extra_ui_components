@@ -10,9 +10,10 @@ ExampleComponent is an example component. It takes a property, `label`, and disp
 }
 
 \usage{
-webcamDashUiComponents(id=NULL, className=NULL, audio=NULL, height=NULL, width=NULL,
-screenshotWidth=NULL, screenshotHeight=NULL, screenshotFormat=NULL,
-screenshotQuality=NULL, screenshotInterval=NULL, screenshot=NULL)
+webcamDashUiComponents(id=NULL, className=NULL, audio=NULL, height=NULL,
+width=NULL, screenshotWidth=NULL, screenshotHeight=NULL,
+screenshotFormat=NULL, screenshotQuality=NULL,
+screenshotInterval=NULL, screenshot=NULL)
 }
 
 \arguments{
@@ -40,3 +41,6 @@ screenshotQuality=NULL, screenshotInterval=NULL, screenshot=NULL)
 image. screenshot is the prop updated at fixed interval from calling
 getScreenshot(). It is currently capped at 25 fps.}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

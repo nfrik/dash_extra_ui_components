@@ -10,9 +10,10 @@
 }
 
 \usage{
-paginatorDashUiComponents(id=NULL, totalRecords=NULL, rows=NULL, first=NULL, pageLinkSize=NULL,
-rowsPerPageOptions=NULL, style=NULL, className=NULL, template=NULL,
-onPageChange=NULL, leftContent=NULL, rightContent=NULL,
+paginatorDashUiComponents(id=NULL, totalRecords=NULL, rows=NULL, first=NULL,
+pageLinkSize=NULL, rowsPerPageOptions=NULL, style=NULL,
+className=NULL, template=NULL, onPageChange=NULL,
+leftContent=NULL, rightContent=NULL,
 currentPageReportTemplate=NULL, alwaysShow=NULL)
 }
 
@@ -45,3 +46,6 @@ currentPageReportTemplate=NULL, alwaysShow=NULL)
 
 \item{alwaysShow}{Logical. }
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

@@ -10,8 +10,8 @@ WrapperComponent on the Steps component Adds callback
 }
 
 \usage{
-stepsComponent(id=NULL, model=NULL, activeIndex=NULL, readOnly=NULL, style=NULL,
-className=NULL, onSelect=NULL)
+stepsComponent(id=NULL, model=NULL, activeIndex=NULL, readOnly=NULL,
+style=NULL, className=NULL, onSelect=NULL)
 }
 
 \arguments{
@@ -29,3 +29,6 @@ className=NULL, onSelect=NULL)
 
 \item{onSelect}{Callback when item is selected}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

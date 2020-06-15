@@ -10,11 +10,13 @@
 }
 
 \usage{
-gPayButtonComponent(id=NULL, totalPrice=NULL, totalPriceStatus=NULL, currencyCode=NULL,
-countryCode=NULL, merchantInfo=NULL, paymentMethods=NULL, className=NULL,
-style=NULL, color=NULL, type=NULL, apiVersion=NULL, apiVersionMinor=NULL,
-checkoutOption=NULL, development=NULL, changedPaymentData=NULL,
-userCancelData=NULL, loadPaymentData=NULL, paymentAuthorized=NULL)
+gPayButtonComponent(id=NULL, totalPrice=NULL, totalPriceStatus=NULL,
+currencyCode=NULL, countryCode=NULL, merchantInfo=NULL,
+paymentMethods=NULL, className=NULL, style=NULL, color=NULL,
+type=NULL, apiVersion=NULL, apiVersionMinor=NULL,
+checkoutOption=NULL, development=NULL,
+changedPaymentData=NULL, userCancelData=NULL,
+loadPaymentData=NULL, paymentAuthorized=NULL)
 }
 
 \arguments{
@@ -56,3 +58,6 @@ userCancelData=NULL, loadPaymentData=NULL, paymentAuthorized=NULL)
 
 \item{paymentAuthorized}{Named list. }
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

@@ -10,10 +10,12 @@ Wrapper component for the listbox.Adds custom template and styling
 }
 
 \usage{
-listBoxComponent(id=NULL, value=NULL, options=NULL, optionLabel=NULL, itemTemplate=NULL,
-style=NULL, listStyle=NULL, className=NULL, dataKey=NULL, multiple=NULL,
-metaKeySelection=NULL, filter=NULL, tabIndex=NULL, tooltip=NULL,
-tooltipOptions=NULL, onChange=NULL, disabled=NULL, listContainerStyle=NULL)
+listBoxComponent(id=NULL, value=NULL, options=NULL, optionLabel=NULL,
+itemTemplate=NULL, style=NULL, listStyle=NULL,
+className=NULL, dataKey=NULL, multiple=NULL,
+metaKeySelection=NULL, filter=NULL, tabIndex=NULL,
+tooltip=NULL, tooltipOptions=NULL, onChange=NULL,
+disabled=NULL, listContainerStyle=NULL)
 }
 
 \arguments{
@@ -56,3 +58,6 @@ On touch enabled devices, metaKeySelection is turned off automatically.}
 
 \item{listContainerStyle}{Named list. Style class of the container.}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

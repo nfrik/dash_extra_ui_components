@@ -8,6 +8,7 @@ from .GPayButtonComponent import GPayButtonComponent
 from .Geolocator import Geolocator
 from .GeolocatorComponent import GeolocatorComponent
 from .GeolocatorDashUiComponents import GeolocatorDashUiComponents
+from .IdleTimerComponent import IdleTimerComponent
 from .InputText import InputText
 from .ListBox import ListBox
 from .ListBoxComponent import ListBoxComponent
@@ -51,6 +52,7 @@ __all__ = [
     "Geolocator",
     "GeolocatorComponent",
     "GeolocatorDashUiComponents",
+    "IdleTimerComponent",
     "InputText",
     "ListBox",
     "ListBoxComponent",

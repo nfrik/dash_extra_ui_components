@@ -10,8 +10,8 @@ PanelMenuComponent
 }
 
 \usage{
-panelMenuComponent(id=NULL, model=NULL, style=NULL, className=NULL, panelmenuItem=NULL,
-panelsubmenu=NULL)
+panelMenuComponent(id=NULL, model=NULL, style=NULL, className=NULL,
+panelmenuItem=NULL, panelsubmenu=NULL)
 }
 
 \arguments{
@@ -27,3 +27,6 @@ panelsubmenu=NULL)
 
 \item{panelsubmenu}{Named list. Selected submenu item}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

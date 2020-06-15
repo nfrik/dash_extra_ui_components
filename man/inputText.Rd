@@ -10,8 +10,8 @@ InputText Bar. displays on top of the search box component if filter is set to t
 }
 
 \usage{
-inputText(onInput=NULL, onKeyPress=NULL, keyfilter=NULL, validateOnly=NULL, tooltip=NULL,
-tooltipOptions=NULL)
+inputText(onInput=NULL, onKeyPress=NULL, keyfilter=NULL,
+validateOnly=NULL, tooltip=NULL, tooltipOptions=NULL)
 }
 
 \arguments{
@@ -27,3 +27,6 @@ tooltipOptions=NULL)
 
 \item{tooltipOptions}{Named list. Tooltip options. An object}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

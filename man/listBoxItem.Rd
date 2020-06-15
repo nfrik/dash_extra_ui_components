@@ -10,8 +10,8 @@ Component to render individual items in a list box
 }
 
 \usage{
-listBoxItem(option=NULL, label=NULL, selected=NULL, tabIndex=NULL, onClick=NULL,
-onTouchEnd=NULL, template=NULL)
+listBoxItem(option=NULL, label=NULL, selected=NULL, tabIndex=NULL,
+onClick=NULL, onTouchEnd=NULL, template=NULL)
 }
 
 \arguments{
@@ -29,3 +29,6 @@ onTouchEnd=NULL, template=NULL)
 
 \item{template}{Template funtion to use}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

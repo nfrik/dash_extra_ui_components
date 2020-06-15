@@ -10,9 +10,10 @@
 }
 
 \usage{
-microphoneDashUiComponents(id=NULL, backgroundColor=NULL, strokeColor=NULL, className=NULL,
-audioBitsPerSecond=NULL, mimeType=NULL, height=NULL, record=NULL, realData=NULL,
-recordedBlob=NULL, visualSetting=NULL, width=NULL)
+microphoneDashUiComponents(id=NULL, backgroundColor=NULL, strokeColor=NULL,
+className=NULL, audioBitsPerSecond=NULL, mimeType=NULL,
+height=NULL, record=NULL, realData=NULL, recordedBlob=NULL,
+visualSetting=NULL, width=NULL)
 }
 
 \arguments{
@@ -40,3 +41,6 @@ recordedBlob=NULL, visualSetting=NULL, width=NULL)
 
 \item{width}{Numeric. }
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

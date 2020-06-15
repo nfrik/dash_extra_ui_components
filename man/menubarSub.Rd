@@ -10,8 +10,8 @@
 }
 
 \usage{
-menubarSub(model=NULL, root=NULL, className=NULL, popup=NULL, onLeafClick=NULL,
-onKeyDown=NULL, parentActive=NULL)
+menubarSub(model=NULL, root=NULL, className=NULL, popup=NULL,
+onLeafClick=NULL, onKeyDown=NULL, parentActive=NULL)
 }
 
 \arguments{
@@ -29,3 +29,6 @@ onKeyDown=NULL, parentActive=NULL)
 
 \item{parentActive}{Logical. }
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

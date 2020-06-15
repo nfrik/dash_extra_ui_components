@@ -17,8 +17,9 @@ import PanelMenuComponent from './components/PanelMenu/PanelMenuComponent';
 import PDFViewerComponent from './components/PDFViewer/PDFViewerComponent.react';
 import GeolocatorComponent from './components/Geolocator/GeolocatorComponent.react';
 import TrelloComponent from './components/Trello/TrelloComponent';
-import PMSComponent from './components/PMS_Component/PMSComponent.react';
+// import PMSComponent from './components/PMS_Component/PMSComponent.react';
 import GPayButtonComponent from './components/GPayButtonComponent/GPayButtonComponent';
+import IdleTimerComponent from './components/IdleTimerComponent/IdleTimerComponent'
 
 export {
     // ExtraDashUiComponents,
@@ -40,6 +41,6 @@ export {
     GeolocatorComponent,
     TrelloComponent,
     GPayButtonComponent,
-    PMSComponent,
-    
+    // PMSComponent,
+    IdleTimerComponent
 };

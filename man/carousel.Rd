@@ -10,11 +10,13 @@ The main carousel component
 }
 
 \usage{
-carousel(id=NULL, value=NULL, page=NULL, header=NULL, footer=NULL, style=NULL,
-className=NULL, itemTemplate=NULL, circular=NULL, autoplayInterval=NULL,
-numVisible=NULL, numScroll=NULL, responsiveOptions=NULL, orientation=NULL,
-verticalViewPortHeight=NULL, contentClassName=NULL, containerClassName=NULL,
-dotsContainerClassName=NULL, onPageChange=NULL)
+carousel(id=NULL, value=NULL, page=NULL, header=NULL, footer=NULL,
+style=NULL, className=NULL, itemTemplate=NULL,
+circular=NULL, autoplayInterval=NULL, numVisible=NULL,
+numScroll=NULL, responsiveOptions=NULL, orientation=NULL,
+verticalViewPortHeight=NULL, contentClassName=NULL,
+containerClassName=NULL, dotsContainerClassName=NULL,
+onPageChange=NULL)
 }
 
 \arguments{
@@ -56,3 +58,6 @@ dotsContainerClassName=NULL, onPageChange=NULL)
 
 \item{onPageChange}{Callback to invoke after scroll.}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

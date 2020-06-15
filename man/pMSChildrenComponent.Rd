@@ -22,3 +22,6 @@ pMSChildrenComponent(data=NULL, girlDataUpdate=NULL, range=NULL, delete=NULL)
 
 \item{delete}{}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

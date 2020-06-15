@@ -10,8 +10,8 @@
 }
 
 \usage{
-pMSComponent(value=NULL, id=NULL, newGirl=NULL, updateData=NULL, range=NULL,
-currentGirlId=NULL, deleteID=NULL)
+pMSComponent(value=NULL, id=NULL, newGirl=NULL, updateData=NULL,
+range=NULL, currentGirlId=NULL, deleteID=NULL)
 }
 
 \arguments{
@@ -29,3 +29,6 @@ currentGirlId=NULL, deleteID=NULL)
 
 \item{deleteID}{Numeric. }
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

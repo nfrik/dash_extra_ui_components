@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {StepsComponent, MenuBarComponent, PanelMenuComponent, GPayButtonComponent, PMSComponent} from '../lib';
+import {StepsComponent, MenuBarComponent, PanelMenuComponent, GPayButtonComponent, PMSComponent, IdleTimerComponent} from '../lib';
 import GPayButton from 'react-google-pay-button';
 class StepsDemo extends Component {
     constructor(props) {
@@ -11,6 +11,7 @@ class StepsDemo extends Component {
         return (
             <div>
                 <h3>Hello</h3>
+                <IdleTimerComponent id="idletimer"/>
                 {/* <GPayButton
                     totalPriceStatus={'FINAL'}
                     totalPrice={'14.45'}
@@ -18,7 +19,7 @@ class StepsDemo extends Component {
                     countryCode={'GB'}
                     development={true}
                 /> */}
-                <GPayButtonComponent />
+                {/* <GPayButtonComponent /> */}
             </div>
         );
     }

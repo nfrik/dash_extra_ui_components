@@ -10,8 +10,8 @@ OrganizationChartComponent is a component to nicely display a data tree. It take
 }
 
 \usage{
-organizationChartComponent(id=NULL, value=NULL, selectionMode=NULL, selection=NULL, className=NULL,
-style=NULL)
+organizationChartComponent(id=NULL, value=NULL, selectionMode=NULL, selection=NULL,
+className=NULL, style=NULL)
 }
 
 \arguments{
@@ -28,3 +28,6 @@ Please check on sample data at /sample_data/org_data}
 
 \item{style}{Named list. Inline style of the component.}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+
