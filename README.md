@@ -23,6 +23,7 @@ Get started with:
 11. Steps: https://github.com/primefaces/primereact
 12. Trello: https://github.com/rcdexta/react-trello
 13. Webcam: https://github.com/mozmorris/react-webcam
+14. User Activity (IdleTimer): https://github.com/SupremeTechnopriest/react-idle-timer
 
 Current implementation is not complete and some components might be only partially functional.
 
