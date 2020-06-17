@@ -10,8 +10,9 @@
 }
 
 \usage{
-dataScrollerDashUiComponents(id=NULL, value=NULL, rows=NULL, inline=NULL, scrollHeight=NULL, loader=NULL,
-buffer=NULL, style=NULL, className=NULL, onLazyLoad=NULL, itemTemplate=NULL,
+dataScrollerDashUiComponents(id=NULL, value=NULL, rows=NULL, inline=NULL,
+scrollHeight=NULL, loader=NULL, buffer=NULL, style=NULL,
+className=NULL, onLazyLoad=NULL, itemTemplate=NULL,
 header=NULL, footer=NULL, lazy=NULL)
 }
 
@@ -44,3 +45,6 @@ header=NULL, footer=NULL, lazy=NULL)
 
 \item{lazy}{Logical. }
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

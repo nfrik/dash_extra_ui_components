@@ -10,9 +10,11 @@
 }
 
 \usage{
-geolocator(positionOptions=NULL, watchPosition=NULL, userDecisionTimeout=NULL,
-suppressLocationOnMount=NULL, geolocationProvider=NULL,
-isOptimisticGeolocationEnabled=NULL, onSuccess=NULL, onError=NULL, errorMsg=NULL)
+geolocator(positionOptions=NULL, watchPosition=NULL,
+userDecisionTimeout=NULL, suppressLocationOnMount=NULL,
+geolocationProvider=NULL,
+isOptimisticGeolocationEnabled=NULL, onSuccess=NULL,
+onError=NULL, errorMsg=NULL)
 }
 
 \arguments{
@@ -34,3 +36,6 @@ isOptimisticGeolocationEnabled=NULL, onSuccess=NULL, onError=NULL, errorMsg=NULL
 
 \item{errorMsg}{Named list. }
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

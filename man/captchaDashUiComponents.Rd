@@ -10,8 +10,9 @@ ExampleComponent is an example component. It takes a property, `label`, and disp
 }
 
 \usage{
-captchaDashUiComponents(id=NULL, sitekey=NULL, theme=NULL, captchaType=NULL, size=NULL, index=NULL,
-language=NULL, onResponse=NULL, onExpire=NULL, responsetext=NULL)
+captchaDashUiComponents(id=NULL, sitekey=NULL, theme=NULL, captchaType=NULL,
+size=NULL, index=NULL, language=NULL, onResponse=NULL,
+onExpire=NULL, responsetext=NULL)
 }
 
 \arguments{
@@ -35,3 +36,6 @@ language=NULL, onResponse=NULL, onExpire=NULL, responsetext=NULL)
 
 \item{responsetext}{Character. }
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

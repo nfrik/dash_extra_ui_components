@@ -1,6 +1,6 @@
 import dash
 import dash_html_components as html
-from dash.dependencies import Input, Output
+from dash.dependencies import Input, Output, State
 
 import dash_extra_ui_components as ex
 from sample_data.org_data import sample1, sample2
@@ -256,7 +256,13 @@ loadButton = html.Button(
     value='Load'
 )
 
+PMSData = '[{"id": 1, "girlName": "Anna", "startDate": "2020-04-25", "cycle": 30, "menstruation": 7, "ovulation": 14},{"id":2, "girlName": "Olga", "startDate": "2020-04-28", "cycle": 28, "menstruation": 5, "ovulation": 13}]'
+
+
 app.layout = html.Div(children=[
+    ex.IdleTimerComponent(id="idle", timeout = 9000),
+    html.Div(id="idleout"),
+    html.Div(id="idleout1"),
     ex.GeolocatorComponent(
         id='geolocator',
     ),
@@ -350,6 +356,8 @@ app.layout = html.Div(children=[
         editLaneTitle=True,
     ),
     html.Div(id='out'),
+    html.Div(id='getdeleteid'),
+    html.Div(id='getupdatedata'),
     html.H4('PDF Viewer Preview'),
     ex.PDFViewerComponent(
             url='https://arxiv.org/pdf/quant-ph/0410100.pdf',
@@ -367,7 +375,6 @@ app.layout = html.Div(children=[
                                          Input('Trello1','landId'),
                                          Input('Trello1', 'changedData')])
 def chageData(event, cardId, landId,changedData):
-    print(event, cardId, landId,changedData)
     return '{}'.format(event)
 
 @app.callback(Output('output', 'children'), [Input('tree', 'id'),
@@ -382,7 +389,24 @@ def display_output(text, first, rows):
 # def display_output0(selection):
 #     return 'You have selected {}'.format(selection)
 
+@app.callback(Output('idleout','children'),
+            [Input('idle','acType'),
+             Input('idle', 'xPosition'),
+             Input('idle', 'yPosition')],
+            [State('idle', 'timeStamp'),
+             State('idle', 'code'),
+             State('idle', 'pageX'),
+             State('idle', 'pageY'),
+             State('idle', 'key'),
+             State('idle', 'which'),
+            ])
+def idleEvent(acType,xPosition, yPosition, timeStamp, code, pageX, pageY, key, which):
+    print(acType,xPosition, yPosition, timeStamp, code, pageX, pageY, key, which)   
 
+@app.callback(Output('idleout1','children'),
+            [Input('idle','idle')])
+def idleEvent1(idle):
+    print(idle)
 # @app.callback(Output('output1', 'children'), [Input('input4', 'value')])
 # def display_output1(selection):
 #     return 'Rating: {}'.format(selection)
@@ -409,11 +433,19 @@ def tree_output(exKey):
 # def onCardClick(onCardClick):
 #     print("-----------", onCardClick)
     
+# @app.callback(Output('GpOut', 'children'),
+#                     [Input('Gp', "userCancelData")]
+#                     )
+# def getCancelData(userCancelData):
+#     print(userCancelData)
 
-@app.callback(Output('tree-output-select', 'children'), [Input('tree', 'selectionKeys')])
-def tree_output1(selectionKeys):
-    return 'Tree selectionKeys: {}'.format(selectionKeys)
+# @app.callback(Output('tree-output-select', 'children'), [Input('tree', 'selectionKeys')])
+# def tree_output1(selectionKeys):
+#     return 'Tree selectionKeys: {}'.format(selectionKeys)
 
 
 if __name__ == '__main__':
     app.run_server(debug=True)
+# action
+# activerootro
+# idle

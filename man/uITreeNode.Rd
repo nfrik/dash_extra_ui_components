@@ -10,15 +10,17 @@
 }
 
 \usage{
-uITreeNode(node=NULL, index=NULL, last=NULL, parent=NULL, path=NULL, disabled=NULL,
-selectionMode=NULL, selectionKeys=NULL, contextMenuSelectionKey=NULL,
-metaKeySelection=NULL, expandedKeys=NULL, propagateSelectionUp=NULL,
-propagateSelectionDown=NULL, dragdropScope=NULL, ariaLabel=NULL,
-ariaLabelledBy=NULL, nodeTemplate=NULL, isNodeLeaf=NULL, onSelect=NULL,
-onUnselect=NULL, onExpand=NULL, onCollapse=NULL, onToggle=NULL,
-onSelectionChange=NULL, onContextMenuSelectionChange=NULL, onPropagateUp=NULL,
-onDragStart=NULL, onDragEnd=NULL, onDrop=NULL, onDropPoint=NULL,
-onContextMenu=NULL)
+uITreeNode(node=NULL, index=NULL, last=NULL, parent=NULL, path=NULL,
+disabled=NULL, selectionMode=NULL, selectionKeys=NULL,
+contextMenuSelectionKey=NULL, metaKeySelection=NULL,
+expandedKeys=NULL, propagateSelectionUp=NULL,
+propagateSelectionDown=NULL, dragdropScope=NULL,
+ariaLabel=NULL, ariaLabelledBy=NULL, nodeTemplate=NULL,
+isNodeLeaf=NULL, onSelect=NULL, onUnselect=NULL,
+onExpand=NULL, onCollapse=NULL, onToggle=NULL,
+onSelectionChange=NULL, onContextMenuSelectionChange=NULL,
+onPropagateUp=NULL, onDragStart=NULL, onDragEnd=NULL,
+onDrop=NULL, onDropPoint=NULL, onContextMenu=NULL)
 }
 
 \arguments{
@@ -84,3 +86,6 @@ onContextMenu=NULL)
 
 \item{onContextMenu}{}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

@@ -10,15 +10,18 @@
 }
 
 \usage{
-treeDashUiComponents(id=NULL, value=NULL, disabled=NULL, selectionMode=NULL, selectionKeys=NULL,
-onSelectionChange=NULL, contextMenuSelectionKey=NULL,
-onContextMenuSelectionChange=NULL, expandedKeys=NULL, style=NULL,
-className=NULL, contentStyle=NULL, contentClassName=NULL, metaKeySelection=NULL,
-propagateSelectionUp=NULL, propagateSelectionDown=NULL, loading=NULL,
-loadingIcon=NULL, dragdropScope=NULL, filter=NULL, filterBy=NULL,
-filterMode=NULL, filterPlaceholder=NULL, nodeTemplate=NULL, onSelect=NULL,
-onUnselect=NULL, onExpand=NULL, onCollapse=NULL, onToggle=NULL, onDragDrop=NULL,
-onContextMenu=NULL)
+treeDashUiComponents(id=NULL, value=NULL, disabled=NULL, selectionMode=NULL,
+selectionKeys=NULL, onSelectionChange=NULL,
+contextMenuSelectionKey=NULL,
+onContextMenuSelectionChange=NULL, expandedKeys=NULL,
+style=NULL, className=NULL, contentStyle=NULL,
+contentClassName=NULL, metaKeySelection=NULL,
+propagateSelectionUp=NULL, propagateSelectionDown=NULL,
+loading=NULL, loadingIcon=NULL, dragdropScope=NULL,
+filter=NULL, filterBy=NULL, filterMode=NULL,
+filterPlaceholder=NULL, nodeTemplate=NULL, onSelect=NULL,
+onUnselect=NULL, onExpand=NULL, onCollapse=NULL,
+onToggle=NULL, onDragDrop=NULL, onContextMenu=NULL)
 }
 
 \arguments{
@@ -84,3 +87,6 @@ onContextMenu=NULL)
 
 \item{onContextMenu}{}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

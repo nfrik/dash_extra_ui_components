@@ -10,7 +10,8 @@ Component to render a button element
 }
 
 \usage{
-button(label=NULL, icon=NULL, iconPos=NULL, tooltip=NULL, tooltipOptions=NULL)
+button(label=NULL, icon=NULL, iconPos=NULL, tooltip=NULL,
+tooltipOptions=NULL)
 }
 
 \arguments{
@@ -24,3 +25,6 @@ button(label=NULL, icon=NULL, iconPos=NULL, tooltip=NULL, tooltipOptions=NULL)
 
 \item{tooltipOptions}{Named list. Configuration of the tooltip, refer to the tooltip documentation for more information.}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

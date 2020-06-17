@@ -22,3 +22,6 @@ pageLinks(id=NULL, value=NULL, page=NULL, onClick=NULL)
 
 \item{onClick}{}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

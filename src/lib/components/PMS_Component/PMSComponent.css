@@ -1,0 +1,42 @@
+body {
+    background-color: black;
+}
+.item1:hover {
+    background: linear-gradient(to bottom, #999999 0%, #000000 100%) !important;
+    color : white !important;
+}
+.itemTitle {
+    background: linear-gradient(to bottom, #999999 0%, #000000 100%) !important;
+    color : white !important;
+    font-size: 30px !important;
+}
+.button {
+    background: linear-gradient(to bottom, #999999 0%, #000000 100%) !important;
+    color : white !important;
+}
+.button:hover {
+    background: linear-gradient(to top, #999999 0%, #000000 100%) !important;
+}
+.datePicker {
+    margin-top: 0px !important;
+    border : none;
+    border-bottom: 1px solid rgb(206, 212, 208);
+    outline: none !important;
+}
+.datePicker:focus{
+    border-color: rgb(66, 113, 244);
+    border: none;
+    border-bottom: 2px solid rgb(66, 113, 244);
+    outline: none !important;
+}
+.datePicker:active{
+    border-top-style: none;
+    border-right-style: none;
+    border-bottom: 2px solid rgb(66, 113, 244);
+    border-left-style: none;
+}
+.dateLabel{
+    margin-top : 13px;
+    margin-bottom: 0px !important;
+    color : rgb(66, 113, 244)
+}

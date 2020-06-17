@@ -10,11 +10,13 @@ WrapperComponent on the Carousel component Adds callback
 }
 
 \usage{
-carouselComponent(id=NULL, value=NULL, page=NULL, header=NULL, footer=NULL, style=NULL,
-className=NULL, circular=NULL, autoplayInterval=NULL, numVisible=NULL,
-numScroll=NULL, responsiveOptions=NULL, orientation=NULL,
-verticalViewPortHeight=NULL, contentClassName=NULL, containerClassName=NULL,
-dotsContainerClassName=NULL, clicked=NULL)
+carouselComponent(id=NULL, value=NULL, page=NULL, header=NULL, footer=NULL,
+style=NULL, className=NULL, circular=NULL,
+autoplayInterval=NULL, numVisible=NULL, numScroll=NULL,
+responsiveOptions=NULL, orientation=NULL,
+verticalViewPortHeight=NULL, contentClassName=NULL,
+containerClassName=NULL, dotsContainerClassName=NULL,
+clicked=NULL)
 }
 
 \arguments{
@@ -54,3 +56,6 @@ dotsContainerClassName=NULL, clicked=NULL)
 
 \item{clicked}{Named list. }
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

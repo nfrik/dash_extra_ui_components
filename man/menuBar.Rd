@@ -22,3 +22,6 @@ menuBar(id=NULL, model=NULL, style=NULL, className=NULL)
 
 \item{className}{Character. Style class of the component.}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

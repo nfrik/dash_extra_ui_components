@@ -10,8 +10,9 @@ Rating component
 }
 
 \usage{
-ratingComponent(id=NULL, value=NULL, disabled=NULL, readonly=NULL, stars=NULL, cancel=NULL,
-style=NULL, className=NULL, tooltip=NULL, tooltipOptions=NULL)
+ratingComponent(id=NULL, value=NULL, disabled=NULL, readonly=NULL,
+stars=NULL, cancel=NULL, style=NULL, className=NULL,
+tooltip=NULL, tooltipOptions=NULL)
 }
 
 \arguments{
@@ -35,3 +36,6 @@ style=NULL, className=NULL, tooltip=NULL, tooltipOptions=NULL)
 
 \item{tooltipOptions}{Named list. Configuration of the tooltip, refer to the tooltip documentation for more information.}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

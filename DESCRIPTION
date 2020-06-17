@@ -11,5 +11,3 @@ BugReports:
 Encoding: UTF-8
 LazyData: true
 KeepSource: true
-Author: NF [aut]
-Maintainer: NF <nvfrik@ncsu.edu>

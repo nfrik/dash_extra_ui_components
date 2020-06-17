@@ -22,3 +22,6 @@ currentPageReport(id=NULL, pageCount=NULL, page=NULL, template=NULL)
 
 \item{template}{Character. }
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

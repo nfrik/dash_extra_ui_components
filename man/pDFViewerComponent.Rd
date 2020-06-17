@@ -10,8 +10,9 @@ PDF Viewer component with controls Page navigation Zoom Rotation
 }
 
 \usage{
-pDFViewerComponent(url=NULL, base64=NULL, page=NULL, scale=NULL, scaleStep=NULL, maxScale=NULL,
-minScale=NULL, css=NULL, navbarOnTop=NULL, hideZoom=NULL, hideRotation=NULL,
+pDFViewerComponent(url=NULL, base64=NULL, page=NULL, scale=NULL,
+scaleStep=NULL, maxScale=NULL, minScale=NULL, css=NULL,
+navbarOnTop=NULL, hideZoom=NULL, hideRotation=NULL,
 protectContent=NULL)
 }
 
@@ -40,3 +41,6 @@ protectContent=NULL)
 
 \item{protectContent}{Logical. By default Right Click and Context Menu are enabled, but can be disabled by passing this prop}
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+

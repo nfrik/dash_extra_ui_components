@@ -10,10 +10,12 @@
 }
 
 \usage{
-trelloComponent(id=NULL, value=NULL, draggable=NULL, laneDraggable=NULL, cardDraggable=NULL,
-collapsibleLanes=NULL, editable=NULL, canAddLanes=NULL, hideCardDeleteIcon=NULL,
-editLaneTitle=NULL, changedData=NULL, cardId=NULL, landId=NULL, event=NULL,
-sourceLaneId=NULL, targetLaneId=NULL, position=NULL, cardDetails=NULL,
+trelloComponent(id=NULL, value=NULL, draggable=NULL, laneDraggable=NULL,
+cardDraggable=NULL, collapsibleLanes=NULL, editable=NULL,
+canAddLanes=NULL, hideCardDeleteIcon=NULL,
+editLaneTitle=NULL, changedData=NULL, cardId=NULL,
+landId=NULL, event=NULL, sourceLaneId=NULL,
+targetLaneId=NULL, position=NULL, cardDetails=NULL,
 landParams=NULL, metaData=NULL, card=NULL)
 }
 
@@ -60,3 +62,6 @@ landParams=NULL, metaData=NULL, card=NULL)
 
 \item{card}{Named list. }
 }
+
+\value{named list of JSON elements corresponding to React.js properties and their values}
+
